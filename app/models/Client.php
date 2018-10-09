@@ -25,7 +25,7 @@ class Client
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     //2. run a query
-    $sql = 'SELECT * FROM Client';
+    $sql = 'SELECT * FROM client';
     $statement = $db->prepare($sql);
     //3. read the results
     $success = $statement->execute();
@@ -42,7 +42,7 @@ class Client
 
   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
-  $sql = 'INSERT Client (clientId, clientName, clientDescription, gicsSector, gicsSubIndustry, headquarters)
+  $sql = 'INSERT client (clientId, clientName, clientDescription, gicsSector, gicsSubIndustry, headquarters)
           Values (?, ?, ?, ?, ?, ?)';
 
   $statement = $db->prepare($sql);
