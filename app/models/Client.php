@@ -52,7 +52,7 @@ class Client
     $this->clientDescription,
     $this->gicsSector,
     $this->gicsSubIndustry,
-    $this->$headquarters
+    $this->headquarters
   ]);
 
   $this->clientId = $db->lastInsertId();
