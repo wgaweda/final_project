@@ -47,12 +47,12 @@ class Client
 
   $statement = $db->prepare($sql);
   $success = $statement->execute([
-    $this->clientId;
-    $this->clientName;
-    $this->clientDescription;
-    $this->gicsSector;
-    $this->gicsSubIndustry;
-    $this->$headquarters;
+    $this->clientId,
+    $this->clientName,
+    $this->clientDescription,
+    $this->gicsSector,
+    $this->gicsSubIndustry,
+    $this->$headquarters
   ]);
 
   $this->clientId = $db->lastInsertId();
