@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 //FETCH ALL
-$sensorsDeployed = sensorDeployed::fetchAll();
+$sensorsDeployed = Deployed::fetchAll();
 
 $json = json_encode($sensorsDeployed, JSON_PRETTY_PRINT);
 

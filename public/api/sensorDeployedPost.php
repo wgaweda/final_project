@@ -1,6 +1,6 @@
 <?php
 
-$sensor = new sensorDeployed($_POST);
+$sensor = new Deployed($_POST);
 
 $sensor->create();
 

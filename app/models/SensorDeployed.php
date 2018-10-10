@@ -1,6 +1,6 @@
 <?php
 
-class Sensor
+class Deployed
 
 {
   public $sensorDeployedId;
@@ -29,7 +29,7 @@ class Sensor
     //4. handle the results
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $theSensorDeployed = new Sensor($row);
+      $theSensorDeployed = new Deployed($row);
       array_push($arr, $theSensorDeployed);
     }
     return $arr;
