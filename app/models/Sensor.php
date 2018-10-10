@@ -11,7 +11,7 @@ class Sensor
 
   public function __construct($data) {
   $this->sensorId = isset($data['sensorId']) ? intval($data['sensorId']) : null;
-  $this->sensortName = $data['sensortName'];
+  $this->sensortName = $data['sensorName'];
   $this->sensorDescription = $data['sensorDescription'];
   $this->manufacturer = $data['manufacturer'];
   $this->totalLifeExpentancyHours = $data['totalLifeExpentancyHours'];
