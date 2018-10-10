@@ -10,7 +10,7 @@ class Deployed
   public $deployedDate;
 
   public function __construct($data) {
-  $this->sensorDeployedId = isset($data['sensorId']) ? intval($data['sensorId']) : null;
+  $this->sensorDeployedId = isset($data['sensorDeployedId']) ? intval($data['sensorDeployedId']) : null;
   $this->sensorId = $data['sensorId'];
   $this->turbineDeployedId = $data['turbineDeployedId'];
   $this->serialNumber = $data['serialNumber'];
