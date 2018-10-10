@@ -54,7 +54,7 @@ class Series
   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
   $sql = 'INSERT sensorTimeSeries (Id, sensorDeployedId, dataCollectedDate, output, heatRate, compressorEfficiency, availability, reliability, firedHours, trips, starts)
-          Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+          Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 
   $statement = $db->prepare($sql);
   $success = $statement->execute([
