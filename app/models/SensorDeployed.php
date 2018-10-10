@@ -39,7 +39,7 @@ class Deployed
 
   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
-  $sql = 'INSERT sensor (sensorDeployedId, sensorId, turbineDeployedId, serialNumber, deployedDate)
+  $sql = 'INSERT sensorDeployed (sensorDeployedId, sensorId, turbineDeployedId, serialNumber, deployedDate)
           Values (?, ?, ?, ?, ?)';
 
   $statement = $db->prepare($sql);

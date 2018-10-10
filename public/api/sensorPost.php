@@ -1,5 +1,7 @@
 <?php
 
+//Works
+
 $sensor = new Sensor($_POST);
 
 $sensor->create();
