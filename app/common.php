@@ -13,3 +13,4 @@ require 'environment.php';
 
 /** models **/
 require 'models/Client.php';
+require 'models/Sensor.php';
