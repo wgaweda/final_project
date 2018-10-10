@@ -45,11 +45,12 @@ class Sensor
 
   $statement = $db->prepare($sql);
   $success = $statement->execute([
-    $this->sensorId;
-    $this->sensorName;
-    $this->sensorDescription;
-    $this->manufacturer;
+    $this->sensorId,
+    $this->sensorName,
+    $this->sensorDescription,
+    $this->manufacturer,
     $this->totalLifeExpentancyHours
+
   ]);
 
   $this->sensorId = $db->lastInsertId();
