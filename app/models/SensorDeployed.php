@@ -34,24 +34,4 @@ class Deployed
     }
     return $arr;
   }
-
-  public function create() {
-
-  $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-
-  $sql = 'INSERT sensorDeployed (sensorDeployedId, sensorId, turbineDeployedId, serialNumber, deployedDate)
-          Values (?, ?, ?, ?, ?)';
-
-  $statement = $db->prepare($sql);
-  $success = $statement->execute([
-    $this->sensorDeployedId,
-    $this->sensorId,
-    $this->turbineDeployedId,
-    $this->serialNumber,
-    $this->deployedDate
-
-  ]);
-
-  $this->sensorDeployedId = $db->lastInsertId();
-}
 }

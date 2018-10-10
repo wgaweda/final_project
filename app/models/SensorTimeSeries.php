@@ -48,30 +48,4 @@ class Series
     }
     return $arr;
   }
-
-  public function create() {
-
-  $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-
-  $sql = 'INSERT sensorTimeSeries (Id, sensorDeployedId, dataCollectedDate, output, heatRate, compressorEfficiency, availability, reliability, firedHours, trips, starts)
-          Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-
-  $statement = $db->prepare($sql);
-  $success = $statement->execute([
-    $this->Id,
-    $this->sensorDeployedId,
-    $this->dataCollectedDate,
-    $this->output,
-    $this->heatRate,
-    $this->compressorEfficiency,
-    $this->availability,
-    $this->reliability,
-    $this->firedHours,
-    $this->trips,
-    $this->starts
-
-  ]);
-
-  $this->Id = $db->lastInsertId();
-}
 }

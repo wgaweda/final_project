@@ -2,11 +2,10 @@
 <?php
 require '../../app/common.php';
 
-
 //FETCH ALL
-$sensors = Sensor::fetchAll();
+$sites = Site::fetchAll();
 
-$json = json_encode($sensors, JSON_PRETTY_PRINT);
+$json = json_encode($sites, JSON_PRETTY_PRINT);
 
 header('Content-Type: application/json');
 echo $json;

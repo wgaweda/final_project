@@ -37,24 +37,4 @@ class Client
     }
     return $arr;
   }
-
-  public function create() {
-
-  $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-
-  $sql = 'INSERT client (clientId, clientName, clientDescription, gicsSector, gicsSubIndustry, headquarters)
-          Values (?, ?, ?, ?, ?, ?)';
-
-  $statement = $db->prepare($sql);
-  $success = $statement->execute([
-    $this->clientId,
-    $this->clientName,
-    $this->clientDescription,
-    $this->gicsSector,
-    $this->gicsSubIndustry,
-    $this->headquarters
-  ]);
-
-  $this->clientId = $db->lastInsertId();
-}
 }
