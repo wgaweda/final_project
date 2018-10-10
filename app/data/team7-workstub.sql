@@ -101,3 +101,11 @@ create table turbineDeployed (
     Foreign Key (turbineId) References turbine(turbineId),
     foreign key (siteId) References site(siteId)
 );
+
+create table clientNotes (
+		Id INT NOT NULL auto_increment,
+    clientId INT NOT NULL,
+    notes TEXT NOT NULL,
+    Primary Key (Id),
+    foreign key (clientId) References client(clientId)
+);
