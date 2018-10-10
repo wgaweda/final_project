@@ -49,7 +49,7 @@ class Sensor
     $this->sensorName;
     $this->sensorDescription;
     $this->manufacturer;
-    $this->totalLifeExpentancyHours;
+    $this->totalLifeExpentancyHours
   ]);
 
   $this->sensorId = $db->lastInsertId();
