@@ -13,6 +13,7 @@ class Series
   public $reliability;
   public $firedHours;
   public $trips;
+  public $starts;
 
 
   public function __construct($data) {
@@ -26,6 +27,7 @@ class Series
   $this->reliability = $data['reliability'];
   $this->firedHours = $data['firedHours'];
   $this->trips = $data['trips'];
+  $this->starts = $data['starts'];
 
 }
 
@@ -51,7 +53,7 @@ class Series
 
   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
-  $sql = 'INSERT sensorTimeSeries (Id, sensorDeployedId, dataCollectedDate, output, heatRate, compressorEfficiency, availability, reliability, firedHours, trips)
+  $sql = 'INSERT sensorTimeSeries (Id, sensorDeployedId, dataCollectedDate, output, heatRate, compressorEfficiency, availability, reliability, firedHours, trips, starts)
           Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 
   $statement = $db->prepare($sql);
@@ -65,7 +67,8 @@ class Series
     $this->availability,
     $this->reliability,
     $this->firedHours,
-    $this->trips
+    $this->trips,
+    $this->starts
 
   ]);
 
