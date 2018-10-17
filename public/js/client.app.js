@@ -1,15 +1,7 @@
 var clientApp = new Vue({
   el: '#clientsMain',
   data:{
-  clients: {
-    clientId: 0,
-    clientName: '',
-    clientDescription:'',
-    gicsSector:'',
-    gicsSubIndustry:'',
-    headquarters:''
-
-  },
+  clients: []
 },
 methods: {
 
@@ -24,6 +16,10 @@ methods: {
       })
     }
   },
+
+  gotoTask(cid) {
+  window.location = 'client1.html?clientId=' + cid;
+},
 
 created() {
   const url = new URL(window.location.href);
