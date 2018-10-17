@@ -27,7 +27,7 @@ methods: {
 //   }
 //
 //
-//   this.fetchClient(cid)
+   this.fetchClient(cid)
 // }
 
 })
