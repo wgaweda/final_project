@@ -24,7 +24,7 @@ created() {
     console.error('Client Id not defined in URL parameters.')
   }
 
-  this.client.id = clientId;
+  this.client.clientId = clientId;
   this.fetchClient(clientId);
 
 }
