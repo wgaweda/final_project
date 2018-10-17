@@ -16,18 +16,19 @@ methods: {
       })
     }
   },
-// created() {
-//   const url = new URL(window.location.href);
-//   const clientId = url.searchParams.get('clientId') || 0;
-//   console.log('Client: '+ clientId);
-//   this.client.id = clientId;
-//
-//   if (!clientId) {
-//     console.error('Client Id not defined in URL parameters.')
-//   }
-//
-//
-   this.fetchClient()
-// }
+
+created() {
+  const url = new URL(window.location.href);
+  const clientId = url.searchParams.get('clientId') || 0;
+  console.log('Client: '+ clientId);
+  this.client.id = clientId;
+
+  if (!clientId) {
+    console.error('Client Id not defined in URL parameters.')
+  }
+
+
+  this.fetchClient(clientId)
+}
 
 })
