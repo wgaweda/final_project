@@ -5,8 +5,9 @@ var clientApp = new Vue({
 },
 methods: {
 
-  fetchClient() {
-    fetch('api/client.php')
+
+  fetchClient(cid) {
+    fetch('api/client.php?clientId='+cid)
     .then( response => response.json() )
     .then( json => {this.clients = json; console.log(this.clients);} )
     .catch( err => {
@@ -15,9 +16,18 @@ methods: {
       })
     }
   },
-created() {
-  console.log('inside created.');
-this.fetchClient()
-}
+// created() {
+//   const url = new URL(window.location.href);
+//   const clientId = url.searchParams.get('clientId') || 0;
+//   console.log('Client: '+ clientId);
+//   this.client.id = clientId;
+//
+//   if (!clientId) {
+//     console.error('Client Id not defined in URL parameters.')
+//   }
+//
+//
+//   this.fetchClient(cid)
+// }
 
 })
