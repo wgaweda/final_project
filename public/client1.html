@@ -23,12 +23,12 @@
   </nav>
 
   <body>
-    <div id="clientsMain">
+    <div id="clientsMain" v-for="c in clients">
 
     <h2>{{ c.clientName }}</h2>
 
     <div class="container-fluid">
-      <div v-for="c in clients" class="row">
+      <div class="row">
         <div class="col">
           Headquarters: {{ c.headquarters }}
           Sector: {{ c.gicSector }}
