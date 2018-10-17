@@ -1,7 +1,15 @@
 var clientApp = new Vue({
   el: '#clientsMain',
   data:{
-  clients: [],
+  clients: {
+    clientId: 0,
+    clientName: '',
+    clientDescription:'',
+    gicsSector:'',
+    gicsSubIndustry:'',
+    headquarters:''
+
+  },
 },
 methods: {
 
