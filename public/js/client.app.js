@@ -15,9 +15,9 @@ methods: {
     }
   },
 
-//   gotoClient(cid) {
-//   window.location = 'client1.html?clientId=' + cid;
-// },
+  gotoClient(cid) {
+  window.location = 'client1.html?clientId=' + cid;
+},
 
 created() {
   const url = new URL(window.location.href);
