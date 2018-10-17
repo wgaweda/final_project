@@ -31,18 +31,18 @@
 
   </nav>
 
-  <body>
-    <h2><img src="images\HE-REC-logo-color-with-TS.jpg" width="100%" /></h2>
+  <body id="clientsMain">
+    <h2>{{ c.clientName }}</h2>
 
-    <main class="container-fluid">
-      <div class="row">
+    <div class="container-fluid">
+      <div v-for="c in clients" class="row">
         <div class="col">
-          Headquarters: Bloomington, IN
-          Sector: Energy
-          Sub Industry: Energy Production
+          Headquarters: {{ c.headquarters }}
+          Sector: {{ c.gicSector }}
+          Sub Industry: {{ c.gicsSubIndustry }}
         </div>
         <div class="col">
-          Hoosier Energy is a generation and transmission cooperative providing wholesale electric wind power and services to 18 member distribution cooperatives in central and southern Indiana and southeastern Illinois. Based in Bloomington, Indiana, Hoosier Energy operates renewable energy power plants and delivers power through nearly 1700 miles of transmission network.
+          {{ c.description}}
         </div>
         </div>
 
@@ -51,5 +51,11 @@
         <footer align="center">
           <a href="https://businessfacilities.com/site-selection-directory/wp-content/uploads/2014/10/HE-REC-logo-color-with-TS.jpg">Hoosier Energy Picture</a>
         </footer>
-    </main>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/clients.app.js"></script>
+
   </body>
+  </html>
