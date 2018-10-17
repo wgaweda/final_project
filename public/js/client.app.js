@@ -4,36 +4,22 @@ var clientApp = new Vue({
   clients: [],
 },
 methods: {
-  // handleCommentForm(e) {
-  //
-  //     const s = JSON.stringify(this.commentForm);
-  //
-  //     fetch('../api/comment.php', {
-  //       method: "POST",
-  //       headers: {
-  //           "Content-Type": "application/json; charset=utf-8",
-  //       },
-  //       body: s
-  //   })
-  //
-  //   .then( response => response.json() )
-  //   .then( json => {this.comments.push(json)})
-  //   .catch( err => {
-  //     console.log('COMMENT POST ERROR:');
-  //     console.log(err);
-  //   })
-  //
-  //     this.commentForm = this.getEmptyCommentForm();
-  //   },
-  //
-  //   getEmptyCommentForm() {
-  //     return {
-  //     }
-  //   },
 
-//help recieved from Karan Asher
+created () {
+
+  // Do data fetch
+  const url = new URL(window.location.href);
+  const taskId = url.searchParams.get('clientId');
+  console.log('Client: '+ clientId);
+  this.client.id = clientId;
+
+  if (!clientId) {
+  }
+
+},
+
   fetchClient() {
-    fetch('api/client.php')
+    fetch('api/client.php?clientId='+clientId)
     .then( response => response.json() )
     .then( json => {this.clients = json; console.log(this.clients);} )
     .catch( err => {
