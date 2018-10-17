@@ -23,7 +23,9 @@
   </nav>
 
   <body>
-    <div id="clientsMain" v-for="c in clients">
+    <main id="clientsMain">
+
+    <div v-for="c in clients">
 
     <h2>{{ c.clientName }}</h2>
 
@@ -41,6 +43,7 @@
 
     </div>
   </div>
+</main>
 
     <!-- development version, includes helpful console warnings -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
