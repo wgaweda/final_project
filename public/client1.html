@@ -26,9 +26,8 @@
     <main id="clientsMain">
 
     <div v-for="c in clients"
-    :key="clients.clientId"
-    :id="'clients-' + clients.clientId"
-    @click="gotoClient(clients.clientId)">
+    :key="c.clientId"
+    :id="'clients-' + c.clientId">
 
     <h2>{{ c.clientName }}</h2>
 
