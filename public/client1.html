@@ -25,7 +25,8 @@
   <body>
     <main id="clientsMain">
 
-    <div v-for="c in clients">
+    <div v-for="c in clients"
+    :key="clients.clientId">
 
     <h2>{{ c.clientName }}</h2>
 
