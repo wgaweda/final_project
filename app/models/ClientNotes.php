@@ -14,7 +14,7 @@ class Notes
   $this->notes = $data['notes'];
 }
 
-public static function fetchByNotesClientId(int $clientId) {
+public static function fetchNotesByClientId(int $clientId) {
 //trying this j
   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
