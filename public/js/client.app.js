@@ -1,7 +1,8 @@
 var clientApp = new Vue({
   el: '#clientsMain',
   data:{
-  clients: []
+  clients: [],
+  clientNotes: []
 },
 methods: {
   fetchClient(cid) {
@@ -9,18 +10,18 @@ methods: {
     .then( response => response.json() )
     .then( json => {this.clients = json; console.log(this.clients)} )
     .catch( err => {
-        console.log('COMMENTS FETCH ERROR:');
+        console.log('CLIENT FETCH ERROR:');
         console.log(err);
       })
     }
   },
 
   fetchClientNotes(cid)  {
-    fetch('api/client.php?clientId='+cid)
+    fetch('api/clientNotes.php?clientId='+cid)
     .then( response => response.json() )
-    .then( json => {this.clients = json; console.log(this.clients)} )
+    .then( json => {this.clientNotes = json; console.log(this.clientNotes)} )
     .catch( err => {
-        console.log('COMMENTS FETCH ERROR:');
+        console.log('CLIENT NOTES FETCH ERROR:');
         console.log(err);
       })
     },
