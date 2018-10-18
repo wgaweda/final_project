@@ -14,7 +14,7 @@ if ($clientId < 1) {
 }
 
 //FETCH ALL
-$comments = Client::fetchNotesByClientId($clientId);
+$comments = Notes::fetchNotesByClientId($clientId);
 
 $json = json_encode($comments, JSON_PRETTY_PRINT);
 
