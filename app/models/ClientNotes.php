@@ -19,7 +19,7 @@ public static function fetchNotesByClientId(int $clientId) {
   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
   //2. run a query
-  $sql = 'SELECT * FROM clientNotes WHERE clientId = ?';
+  $sql = 'SELECT * FROM clientNotes WHERE clientNotes.clientId = clients.cleintId';
   $statement = $db->prepare($sql);
   //3. read the results
   $success = $statement->execute(
