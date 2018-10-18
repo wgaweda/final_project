@@ -47,7 +47,7 @@
 
     </div>
   </div>
-  <div v-for="n in clientNotes">
+  <div>
     <table class="table table-striped table-sm">
       <thead>
       <tr>
@@ -56,7 +56,7 @@
         </th>
       </tr>
       </thead>
-      <tbody>
+      <tbody v-for="n in clientNotes">
         <td>
           {{ n.notes }}
         </td>
