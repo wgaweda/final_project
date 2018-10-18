@@ -25,7 +25,7 @@ class Client
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     //2. run a query
-    $sql = 'SELECT * FROM client WHERE clientId = ?';
+    $sql = 'SELECT * FROM client, clientNotes WHERE clientId = ?';
     $statement = $db->prepare($sql);
     //3. read the results
     $success = $statement->execute(
