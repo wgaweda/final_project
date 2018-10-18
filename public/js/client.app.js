@@ -14,7 +14,7 @@ methods: {
         console.log(err);
       })
     }
-  },
+
 
   fetchNotes(cid)  {
     fetch('api/clientNotes.php?clientId='+cid)
@@ -25,6 +25,7 @@ methods: {
         console.log(err);
       })
     },
+  },
 
 created() {
   const url = new URL(window.location.href);
