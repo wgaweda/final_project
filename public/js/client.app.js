@@ -16,8 +16,8 @@ methods: {
     }
   },
 
-  fetchClientNotes(cid)  {
-    fetch('api/clientNotes.php')
+  fetchNotes(cid)  {
+    fetch('api/clientNotes.php?clientId='+cid)
     .then( response => response.json() )
     .then( json => {this.clientNotes = json; console.log(this.clientNotes)} )
     .catch( err => {
@@ -38,7 +38,7 @@ created() {
 
 
   this.fetchClient(clientId);
-  this.fetchClientNotes(clientId);
+  this.fetchNotes(clientId);
 }
 
 })
