@@ -14,9 +14,9 @@ if ($clientId < 1) {
 }
 
 //FETCH ALL
-$comments = Notes::fetchNotesByClientId($clientId);
+$notes = Notes::fetchNotesByClientId($clientId);
 
-$json = json_encode($comments, JSON_PRETTY_PRINT);
+$json = json_encode($notes, JSON_PRETTY_PRINT);
 
 header('Content-Type: application/json');
 echo $json;

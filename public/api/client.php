@@ -8,10 +8,9 @@ if ($clientId < 1) {
   throw new Exception('Invalid Client ID in URL');
 }
 
-//FETCH ALL
-$comments = Client::fetchByClientId($clientId);
+$client = Client::fetchByClientId($clientId);
 
-$json = json_encode($comments, JSON_PRETTY_PRINT);
+$json = json_encode($client, JSON_PRETTY_PRINT);
 
 header('Content-Type: application/json');
 echo $json;
