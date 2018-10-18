@@ -37,6 +37,7 @@ created() {
 
 
   this.fetchClient(clientId)
+  this.fetchClientNotes(clientId)
 }
 
 })
