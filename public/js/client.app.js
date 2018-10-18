@@ -13,10 +13,10 @@ methods: {
         console.log('CLIENT FETCH ERROR:');
         console.log(err);
       })
-    }
+    },
 
 
-  fetchNotes(cid)  {
+  fetchNotes(cid) {
     fetch('api/clientNotes.php?clientId='+cid)
     .then( response => response.json() )
     .then( json => {this.clientNotes = json; console.log(this.clientNotes)} )
@@ -25,7 +25,13 @@ methods: {
         console.log(err);
       })
     },
+
+    gotoClient (cid) {
+    window.location = 'client.html?clientId=' + cid;
+  }
+  
   },
+
 
 created() {
   const url = new URL(window.location.href);
