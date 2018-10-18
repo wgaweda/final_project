@@ -47,6 +47,18 @@
 
     </div>
   </div>
+  <div v-for="n in clientNotes">
+    <table>
+      <thead>
+        Client Notes
+      </thead>
+      <tr>
+        <td>
+          {{ n.notes }}
+        </td>
+      </tr>
+    </table>
+  </div>
 </main>
 
     <!-- development version, includes helpful console warnings -->

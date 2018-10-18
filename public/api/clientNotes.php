@@ -7,10 +7,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   exit;
 }
 
-//FETCH ALL
-$clientnotes = Notes::fetchAll();
+$clientId = intval($_GET['clientId'] ?? 0);
 
-$json = json_encode($clientnotes, JSON_PRETTY_PRINT);
+if ($clientId < 1) {
+  throw new Exception('Invalid Project ID in URL');
+}
+
+//FETCH ALL
+$comments = Client::fetchNotesByClientId($clientId);
+
+$json = json_encode($comments, JSON_PRETTY_PRINT);
 
 header('Content-Type: application/json');
 echo $json;

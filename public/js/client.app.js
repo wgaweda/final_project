@@ -15,9 +15,15 @@ methods: {
     }
   },
 
-//   gotoClient(cid) {
-//   window.location = 'client1.html?clientId=' + cid;
-// },
+  fetchClientNotes(cid)  {
+    fetch('api/client.php?clientId='+cid)
+    .then( response => response.json() )
+    .then( json => {this.clients = json; console.log(this.clients)} )
+    .catch( err => {
+        console.log('COMMENTS FETCH ERROR:');
+        console.log(err);
+      })
+    },
 
 created() {
   const url = new URL(window.location.href);

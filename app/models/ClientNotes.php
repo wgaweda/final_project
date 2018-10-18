@@ -14,23 +14,25 @@ class Notes
   $this->notes = $data['notes'];
 }
 
-  public static function fetchAll() {
+public static function fetchByNotesClientId(int $clientId) {
+//trying this j
+  $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
-    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-
-    //2. run a query
-    $sql = 'SELECT * FROM clientNotes';
-    $statement = $db->prepare($sql);
-    //3. read the results
-    $success = $statement->execute();
-    //4. handle the results
-    $arr = [];
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $theNotes = new Notes($row);
-      array_push($arr, $theNotes);
-    }
-    return $arr;
+  //2. run a query
+  $sql = 'SELECT * FROM clientNotes WHERE clientId = ?';
+  $statement = $db->prepare($sql);
+  //3. read the results
+  $success = $statement->execute(
+    [$clientId]
+  );
+  //4. handle the results
+  $arr = [];
+  while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    $theClient = new Notes($row);
+    array_push($arr, $theClient);
   }
+  return $arr;
+}
 
   public function create() {
     //1. connect to the SQLiteDatabase
