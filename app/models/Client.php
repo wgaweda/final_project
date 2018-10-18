@@ -20,15 +20,17 @@ class Client
 
 }
 
-  public static function fetchAll() {
+  public static function fetchByClientId(int $clientId) {
 
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     //2. run a query
-    $sql = 'SELECT * FROM client';
+    $sql = 'SELECT * FROM client WHERE ';
     $statement = $db->prepare($sql);
     //3. read the results
-    $success = $statement->execute();
+    $success = $statement->execute(
+      [$clientId]
+    );
     //4. handle the results
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
