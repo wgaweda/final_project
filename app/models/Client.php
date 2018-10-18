@@ -21,7 +21,7 @@ class Client
 }
 
   public static function fetchByClientId(int $clientId) {
-//trying this
+//trying this j
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     //2. run a query
