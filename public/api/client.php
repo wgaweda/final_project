@@ -5,7 +5,7 @@ require '../../app/common.php';
 $clientId = intval($_GET['clientId'] ?? 0);
 
 if ($clientId < 1) {
-  throw new Exception('Invalid Project ID in URL');
+  throw new Exception('Invalid Client ID in URL');
 }
 
 //FETCH ALL
