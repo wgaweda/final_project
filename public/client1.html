@@ -15,9 +15,9 @@
 <nav>
 
   <div class="topnav">
+    <a href="home.html">Home</a>
     <a href="http://ec2-34-216-141-243.us-west-2.compute.amazonaws.com/client1.html?clientId=1">Hoosier Energy</a>
     <a href="http://ec2-34-216-141-243.us-west-2.compute.amazonaws.com/client1.html?clientId=2">Pacific Tidal Energy</a>
-    <a href="home.html">Home</a>
     <a href="turbine1.html">Turbine</a>
 
   </div>
@@ -29,13 +29,15 @@
     <div v-for="c in clients"
     :key="c.clientId">
 
-    <h2>{{ c.clientName }}</h2>
+    <h2 align="center">{{ c.clientName }}</h2>
 
     <div class="container-fluid">
       <div class="row">
         <div class="col">
           Headquarters: {{ c.headquarters }}
+          <br />
           Sector: {{ c.gicsSector }}
+          <br / />
           Sub Industry: {{ c.gicsSubIndustry }}
         </div>
         <div class="col">
