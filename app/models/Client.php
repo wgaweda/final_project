@@ -3,12 +3,7 @@
 class Client
 
 {
-  public $clientId;
-  public $clientName;
-  public $clientDescription;
-  public $gicsSector;
-  public $gicsSubIndustry;
-  public $headquarters;
+
 
   public function __construct($data) {
   $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
