@@ -37,8 +37,8 @@ created() {
   }
 
 
-  this.fetchClient(clientId)
-  this.fetchClientNotes(clientId)
+  this.fetchClient(clientId);
+  this.fetchClientNotes(clientId);
 }
 
 })
