@@ -1,7 +1,7 @@
 /* new css */
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #333;
+    background-color: darkslategrey;
     overflow: hidden;
 }
 
@@ -10,6 +10,12 @@ background-color: #5DD873;
 padding-bottom: 10px;
 color: darkslategrey;
 font-size: 50px;
+}
+
+.subheaderClass {
+background-color: darkslategrey;
+padding-bottom: 10px;
+color: white;
 }
 
 .bodyClass {
@@ -29,7 +35,12 @@ background-color: #DCDCDC;
 /* Change the color of links on hover */
 .topnav a:hover {
     background-color: #ddd;
+    text-decoration: none;
     color: black;
+}
+
+a:link {
+    text-decoration: none;
 }
 
 /* Add a color to the active/current link */
