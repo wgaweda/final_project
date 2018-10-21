@@ -29,7 +29,7 @@
     <div v-for="c in clients"
     :key="c.clientId">
 
-    <h2 align="center">{{ c.clientName }}</h2>
+    <h2 align="center" class="headerClass">{{ c.clientName }}</h2>
 
     <div class="container-fluid">
       <div class="row">
@@ -37,7 +37,7 @@
           Headquarters: {{ c.headquarters }}
           <br />
           Sector: {{ c.gicsSector }}
-          <br / />
+          <br />
           Sub Industry: {{ c.gicsSubIndustry }}
         </div>
         <div class="col">
