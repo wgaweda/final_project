@@ -30,7 +30,7 @@ methods: {
   fetchSite(cid) {
     fetch('api/site.php?clientId='+cid)
     .then( response => response.json() )
-    .then( json => {this.site = json; console.log(this.site)} )
+    .then( json => {this.sites = json; console.log(this.sites)} )
     .catch( err => {
         console.log('SITE FETCH ERROR:');
         console.log(err);
