@@ -23,6 +23,7 @@ class Site
   $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
   $this->siteName = $data['siteName'];
   $this->siteDescription = $data['siteDescription'];
+  $this->primaryContact = $data['primaryContact'];
   $this->capacity = $data['capacity'];
   $this->commercialDate = $data['commercialDate'];
   $this->addrLine1 = $data['addrLine1'];
