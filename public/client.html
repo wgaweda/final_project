@@ -55,15 +55,12 @@
     <p>
 
     {{ s.siteDescription }}
-    {{ s.primaryContact }}
-    {{ s.capacity }}
-    {{ s.commercialDate }}
-    {{ s.addrLine1 }}
-    <!-- {{ addrLine2 }} -->
-    {{ s.addrCity }}
-    {{ s.addrState }}
-    {{ s.addrZip }}
-    {{ s.addrCountry }}
+    <br />
+    Primary Contact: {{ s.primaryContact }}
+    Capacity: {{ s.capacity }}
+    Commercial Date: {{ s.commercialDate }}
+    <br />
+    Address: {{ s.addrLine1 }}, {{ s.addrCity }}, {{ s.addrState }}, {{ s.addrZip }}, {{ s.addrCountry }}
 
   </p>
 
