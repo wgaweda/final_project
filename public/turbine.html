@@ -32,18 +32,18 @@
     </nav>
 
   <body>
-    <h2>Turbine 3SA.01</h2>
 <main id="turbinesMain" class="container-fluid">
 
   <div v-for="t in turbines" class="row">
     <div class="col">
-    {{ t.turbineName }}
-  </div>
-  <div class="col">
-    Capacity: 429
-    Ramp Up Time: 12
-    Maintenance Interval: 32,000
-  </div>
+      <h2>{{ t.turbineName }}</h2>
+      {{ t.turbineDescription }}
+    </div>
+    <div class="col">
+      Capacity: {{ t.capacity }}
+      Ramp Up Time: {{ t.rampUpTime }}
+      Maintenance Interval: {{ t.maintenanceInterval }}
+    </div>
   </div>
 
 </br>
