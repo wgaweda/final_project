@@ -2,10 +2,15 @@
 <?php
 require '../../app/common.php';
 
-//FETCH ALL
-$sites = Site::fetchAll();
+$siteId = intval($_GET['siteId'] ?? 0);
 
-$json = json_encode($sites, JSON_PRETTY_PRINT);
+if ($siteId < 1) {
+  throw new Exception('Invalid Site ID in URL');
+}
+
+$site = Site::fetchBySiteId($siteId);
+
+$json = json_encode($site, JSON_PRETTY_PRINT);
 
 header('Content-Type: application/json');
 echo $json;

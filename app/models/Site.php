@@ -33,21 +33,40 @@ class Site
   $this->addrCountry = $data['addrCountry'];
 }
 
-  public static function fetchAll() {
+  // public static function fetchAll() {
+  //
+  //   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+  //
+  //   //2. run a query
+  //   $sql = 'SELECT * FROM site';
+  //   $statement = $db->prepare($sql);
+  //   //3. read the results
+  //   $success = $statement->execute();
+  //   //4. handle the results
+  //   $arr = [];
+  //   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+  //     $theSite = new Site($row);
+  //     array_push($arr, $theSite);
+  //   }
+  //   return $arr;
 
-    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+    public static function fetchBySiteId(int $clientId) {
+  //trying this j
+      $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
-    //2. run a query
-    $sql = 'SELECT * FROM site';
-    $statement = $db->prepare($sql);
-    //3. read the results
-    $success = $statement->execute();
-    //4. handle the results
-    $arr = [];
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $theSite = new Site($row);
-      array_push($arr, $theSite);
+      //2. run a query
+      $sql = 'SELECT * FROM site WHERE clientId = ?';
+      $statement = $db->prepare($sql);
+      //3. read the results
+      $success = $statement->execute(
+        [$clientId]
+      );
+      //4. handle the results
+      $arr = [];
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+        $theSite = new Site($row);
+        array_push($arr, $theSite);
+      }
+      return $arr;
     }
-    return $arr;
   }
-}
