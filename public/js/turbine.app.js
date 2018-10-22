@@ -1,5 +1,5 @@
 var turbineApp = new Vue({
-  el: '#turbineMain',
+  el: '#turbinesMain',
   data:{
     turbines:[]
 },
