@@ -28,12 +28,13 @@
 <main id="turbinesMain" class="container-fluid">
 
   <div v-for="t in turbines" class="row">
+    <h2 align="center">{{ t.turbineName }}</h2>
     <div class="col">
-      <h2>{{ t.turbineName }}</h2>
       {{ t.turbineDescription }}
     </div>
     <div class="col">
       Capacity: {{ t.capacity }}
+
       Ramp Up Time: {{ t.rampUpTime }}
       Maintenance Interval: {{ t.maintenanceInterval }}
     </div>
