@@ -15,11 +15,11 @@ methods: {
       })
     },
 
-},
 
 gotoTurbine (tid) {
 window.location = 'turbine.html?turbineId=' + tid;
 }
+},
 
 created() {
   const url = new URL(window.location.href);
@@ -33,3 +33,6 @@ created() {
 
 
   this.fetchTurbine(turbineId);
+}
+
+})
