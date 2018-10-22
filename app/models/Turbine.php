@@ -20,21 +20,42 @@ class Turbine
   $this->maintenanceInterval = $data['maintenanceInterval'];
 }
 
-  public static function fetchAll() {
+  // public static function fetchAll() {
+  //
+  //   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+  //
+  //   //2. run a query
+  //   $sql = 'SELECT * FROM turbine';
+  //   $statement = $db->prepare($sql);
+  //   //3. read the results
+  //   $success = $statement->execute();
+  //   //4. handle the results
+  //   $arr = [];
+  //   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+  //     $theturbine = new Turbine($row);
+  //     array_push($arr, $theturbine);
+  //   }
+  //   return $arr;
+  // }
 
+  public static function fetchByTurbineId(int $turbineId) {
+//trying this j
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     //2. run a query
-    $sql = 'SELECT * FROM turbine';
+    $sql = 'SELECT * FROM turbine WHERE turbineId = ?';
     $statement = $db->prepare($sql);
     //3. read the results
-    $success = $statement->execute();
+    $success = $statement->execute(
+      [$turbineId]
+    );
     //4. handle the results
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $theturbine = new Turbine($row);
-      array_push($arr, $theturbine);
+      $theTurbine = new Turbine($row);
+      array_push($arr, $theTurbine);
     }
     return $arr;
   }
+
 }
