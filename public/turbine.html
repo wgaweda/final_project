@@ -27,15 +27,17 @@
   <body>
 <main id="turbinesMain" class="container-fluid">
 
+  <h2 align="center">{{ t.turbineName }}</h2>
+
   <div v-for="t in turbines" class="row">
-    <h2 align="center">{{ t.turbineName }}</h2>
     <div class="col">
       {{ t.turbineDescription }}
     </div>
     <div class="col">
       Capacity: {{ t.capacity }}
-
+      <br />
       Ramp Up Time: {{ t.rampUpTime }}
+      <br  />
       Maintenance Interval: {{ t.maintenanceInterval }}
     </div>
   </div>
