@@ -33,3 +33,6 @@ created() {
 
 
   this.fetchTurbine(turbineId);
+}
+
+})
