@@ -33,11 +33,11 @@
 
   <body>
     <h2>Turbine 3SA.01</h2>
-<main class="container-fluid">
+<main id="turbineMain" class="container-fluid">
 
-  <div class="row">
+  <div v-for="t in turbines" class="row">
     <div class="col">
-    The 3SA high efficiency, deep-water tidal turbine is an industry leader among S-class offerings.
+    {{ t.turbineName }}
   </div>
   <div class="col">
     Capacity: 429
