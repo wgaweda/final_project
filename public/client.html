@@ -47,6 +47,14 @@
 
     </div>
   </div>
+
+  <div v-for="s in sites"
+  :key="s.clientId">
+
+  <h2> {{ s.siteName }} </h2>
+
+  </div>
+
   <div>
     <table class="table table-striped table-sm">
       <thead>

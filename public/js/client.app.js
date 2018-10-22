@@ -2,7 +2,8 @@ var clientApp = new Vue({
   el: '#clientsMain',
   data:{
   clients: [],
-  clientNotes: []
+  clientNotes: [],
+  sites: []
 },
 methods: {
   fetchClient(cid) {
@@ -26,10 +27,20 @@ methods: {
       })
     },
 
+  fetchSite(cid) {
+    fetch('api/site.php?clientId='+cid)
+    .then( response => response.json() )
+    .then( json => {this.site = json; console.log(this.site)} )
+    .catch( err => {
+        console.log('SITE FETCH ERROR:');
+        console.log(err);
+      })
+  },
+
     gotoClient (cid) {
     window.location = 'client.html?clientId=' + cid;
   }
-  
+
   },
 
 
@@ -46,6 +57,7 @@ created() {
 
   this.fetchClient(clientId);
   this.fetchNotes(clientId);
+  this.fetchSite(clientId);
 }
 
 })
