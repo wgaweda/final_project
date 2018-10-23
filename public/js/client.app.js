@@ -5,74 +5,50 @@ var clientApp = new Vue({
   clientNotes: [],
   sites: [],
 
-
-  clientList:[],
-
-
-  workForm: {
-    notes: '',
-
-   },   // populated by this.getEmptyWorkForm()
+  noteForm: {}
 
 },
 methods: {
-  handleWorkForm(e) {
+  handleNoteForm(e) {
 
-    // TODO: Check validity in a better way
-    if (this.notes_input <= 0) {
-      console.error('Cannot submit, invalid values');
-      return;
-    }
+    // // TODO: Check validity in a better way
+    // if (this.notes_input <= 0) {
+    //   console.error('Cannot submit, invalid values');
+    //   return;
+    // }
+    //
+    //
+    // // Stop field not used by the API
+    // // this.noteForm.stop_date = this.noteForm.stop + ' ' + this.noteForm.stop_time;
 
-
-    // Stop field not used by the API
-    // this.workForm.stop_date = this.workForm.stop + ' ' + this.workForm.stop_time;
-
-    const s = JSON.stringify(this.workForm);
+    const s = JSON.stringify(this.noteForm);
 
     console.log(s);
 
     // POST to remote server
-    fetch('api/clientNotesPost.php', {
+    fetch('api/clientNotes.php', {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
           "Content-Type": "application/json; charset=utf-8"
       },
       body: s // body data type must match "Content-Type" header
     })
+
     .then( response => response.json() )
-    .then( json => {this.workForm.push(json)})
+    .then( json => {this.clientNotes.push(json)})
     .catch( err => {
-      console.error('WORK POST ERROR:');
+      console.error('NOTE POST ERROR:');
       console.error(err);
     })
 
-    // Reset workForm
-    this.workForm = this.getEmptyWorkForm();
+    // Reset noteForm
+    this.noteForm = this.getEmptynoteForm();
   },
 
-  getEmptyWorkForm() {
+  getEmptynoteForm() {
     return {
-
-      notes: null,
-
-
     }
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   fetchClient(cid) {
     fetch('api/client.php?clientId='+cid)
@@ -105,8 +81,6 @@ methods: {
       })
   },
 
-
-
     gotoClient (cid) {
     window.location = 'client.html?clientId=' + cid;
   }
@@ -120,18 +94,9 @@ created() {
   console.log('Client: '+ clientId);
   this.clients.clientId = clientId;
 
-
-  fetch('api/client.php')
-  .then( response => response.json() )
-  .then( json => {clientsMain.clientList = json} )
-  .catch( err => {
-    console.log('TEAM LIST ERROR:');
-    console.log(err); })
-
-
-      if (!clientId) {
-        console.error('Client Id not defined in URL parameters.')
-      }
+  if (!clientId) {
+    console.error('Client Id not defined in URL parameters.')
+  }
 
 
   this.fetchClient(clientId);
