@@ -3,9 +3,53 @@ var clientApp = new Vue({
   data:{
   clients: [],
   clientNotes: [],
-  sites: []
+  sites: [],
+
+  noteForm: {}
+
 },
 methods: {
+  handleNoteForm(e) {
+
+    // // TODO: Check validity in a better way
+    // if (this.notes_input <= 0) {
+    //   console.error('Cannot submit, invalid values');
+    //   return;
+    // }
+    //
+    //
+    // // Stop field not used by the API
+    // // this.noteForm.stop_date = this.noteForm.stop + ' ' + this.noteForm.stop_time;
+
+    const s = JSON.stringify(this.noteForm);
+
+    console.log(s);
+
+    // POST to remote server
+    fetch('api/clientNotes.php', {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+          "Content-Type": "application/json; charset=utf-8"
+      },
+      body: s // body data type must match "Content-Type" header
+    })
+
+    .then( response => response.json() )
+    .then( json => {this.clientNotes.push(json)})
+    .catch( err => {
+      console.error('NOTE POST ERROR:');
+      console.error(err);
+    })
+
+    // Reset noteForm
+    this.noteForm = this.getEmptynoteForm();
+  },
+
+  getEmptynoteForm() {
+    return {
+    }
+  },
+
   fetchClient(cid) {
     fetch('api/client.php?clientId='+cid)
     .then( response => response.json() )
