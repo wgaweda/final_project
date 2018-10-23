@@ -26,7 +26,7 @@ methods: {
     console.log(s);
 
     // POST to remote server
-    fetch('api/clientNotes.php', {
+    fetch('../api/clientNotes.php', {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
           "Content-Type": "application/json; charset=utf-8"
@@ -42,10 +42,10 @@ methods: {
     })
 
     // Reset noteForm
-    this.noteForm = this.getEmptynoteForm();
+    this.noteForm = this.getEmptyNoteForm();
   },
 
-  getEmptynoteForm() {
+  getEmptyNoteForm() {
     return {
     }
   },
