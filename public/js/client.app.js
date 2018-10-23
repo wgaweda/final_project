@@ -4,22 +4,11 @@ var clientApp = new Vue({
   clients: [],
   clientNotes: [],
   sites: [],
-
   noteForm: {}
 
 },
 methods: {
   handleNoteForm(e) {
-
-    // // TODO: Check validity in a better way
-    // if (this.notes_input <= 0) {
-    //   console.error('Cannot submit, invalid values');
-    //   return;
-    // }
-    //
-    //
-    // // Stop field not used by the API
-    // // this.noteForm.stop_date = this.noteForm.stop + ' ' + this.noteForm.stop_time;
 
     const s = JSON.stringify(this.noteForm);
 
