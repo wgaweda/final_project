@@ -8,36 +8,6 @@ var clientApp = new Vue({
 
 },
 methods: {
-  handleNoteForm(e) {
-
-    const s = JSON.stringify(this.noteForm);
-
-    console.log(s);
-
-    // POST to remote server
-    fetch('../api/clientNotes.php', {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-      headers: {
-          "Content-Type": "application/json; charset=utf-8"
-      },
-      body: s // body data type must match "Content-Type" header
-    })
-
-    .then( response => response.json() )
-    .then( json => {this.clientNotes.push(json)})
-    .catch( err => {
-      console.error('NOTE POST ERROR:');
-      console.error(err);
-    })
-
-    // Reset noteForm
-    this.noteForm = this.getEmptyNoteForm();
-  },
-
-  getEmptyNoteForm() {
-    return {
-    }
-  },
 
   fetchClient(cid) {
     fetch('api/client.php?clientId='+cid)
@@ -72,7 +42,38 @@ methods: {
 
     gotoClient (cid) {
     window.location = 'client.html?clientId=' + cid;
-  }
+  },
+
+  handleNoteForm(e) {
+
+    const s = JSON.stringify(this.noteForm);
+
+    console.log(s);
+
+    // POST to remote server
+    fetch('../api/clientNotes.php', {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+          "Content-Type": "application/json; charset=utf-8"
+      },
+      body: s // body data type must match "Content-Type" header
+    })
+
+    .then( response => response.json() )
+    .then( json => {this.clientNotes.push(json)})
+    .catch( err => {
+      console.error('NOTE POST ERROR:');
+      console.error(err);
+    })
+
+    // Reset noteForm
+    this.noteForm = this.getEmptyNoteForm();
+  },
+
+  getEmptyNoteForm() {
+    return {
+    }
+  },
 
   },
 
