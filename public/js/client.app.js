@@ -3,9 +3,77 @@ var clientApp = new Vue({
   data:{
   clients: [],
   clientNotes: [],
-  sites: []
+  sites: [],
+
+
+  clientList:[],
+
+
+  workForm: {
+    notes: '',
+
+   },   // populated by this.getEmptyWorkForm()
+
 },
 methods: {
+  handleWorkForm(e) {
+
+    // TODO: Check validity in a better way
+    if (this.notes_input <= 0) {
+      console.error('Cannot submit, invalid values');
+      return;
+    }
+
+
+    // Stop field not used by the API
+    // this.workForm.stop_date = this.workForm.stop + ' ' + this.workForm.stop_time;
+
+    const s = JSON.stringify(this.workForm);
+
+    console.log(s);
+
+    // POST to remote server
+    fetch('api/clientNotesPost.php', {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+          "Content-Type": "application/json; charset=utf-8"
+      },
+      body: s // body data type must match "Content-Type" header
+    })
+    .then( response => response.json() )
+    .then( json => {this.workForm.push(json)})
+    .catch( err => {
+      console.error('WORK POST ERROR:');
+      console.error(err);
+    })
+
+    // Reset workForm
+    this.workForm = this.getEmptyWorkForm();
+  },
+
+  getEmptyWorkForm() {
+    return {
+
+      notes: null,
+
+
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   fetchClient(cid) {
     fetch('api/client.php?clientId='+cid)
     .then( response => response.json() )
@@ -37,6 +105,8 @@ methods: {
       })
   },
 
+
+
     gotoClient (cid) {
     window.location = 'client.html?clientId=' + cid;
   }
@@ -50,9 +120,18 @@ created() {
   console.log('Client: '+ clientId);
   this.clients.clientId = clientId;
 
-  if (!clientId) {
-    console.error('Client Id not defined in URL parameters.')
-  }
+
+  fetch('api/client.php')
+  .then( response => response.json() )
+  .then( json => {clientsMain.clientList = json} )
+  .catch( err => {
+    console.log('TEAM LIST ERROR:');
+    console.log(err); })
+
+
+      if (!clientId) {
+        console.error('Client Id not defined in URL parameters.')
+      }
 
 
   this.fetchClient(clientId);
