@@ -13,7 +13,7 @@ require '../../app/common.php';
 $siteId = intval($_GET['siteId'] ?? 0);
 
 if ($siteId < 1) {
-  throw new Exception('Invalid turbine ID in URL');
+  throw new Exception('Invalid site ID in URL');
 }
 
 $turbine = Turbine::fetchByTurbineId($siteId);

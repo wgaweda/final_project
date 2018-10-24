@@ -43,7 +43,10 @@ class Turbine
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     //2. run a query
-    $sql = 'SELECT * FROM turbine WHERE siteId = ?';
+    $sql = 'SELECT * FROM turbine, turbineDeployed
+    WHERE turbine.turbineId = turbineDeployed.turbineId
+    AND turbineDeployed.siteId = ?';
+
     $statement = $db->prepare($sql);
     //3. read the results
     $success = $statement->execute(

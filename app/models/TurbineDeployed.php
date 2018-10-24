@@ -26,21 +26,26 @@ class TurbDeployed
   $this->lastUnplannedOutageDate = $data['lastUnplannedOutageDate'];
 }
 
-  public static function fetchAll() {
+public static function fetchByTurbineId(int $siteId) {
+//trying this j
+  $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
-    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+  //2. run a query
+  $sql = 'SELECT * FROM turbine, turbineDeployed
+  WHERE turbine.turbineId = turbineDeployed.turbineId
+  AND turbineDeployed.siteId = ?';
 
-    //2. run a query
-    $sql = 'SELECT * FROM turbineDeployed';
-    $statement = $db->prepare($sql);
-    //3. read the results
-    $success = $statement->execute();
-    //4. handle the results
-    $arr = [];
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $theturbinedep = new TurbDeployed($row);
-      array_push($arr, $theturbinedep);
-    }
-    return $arr;
+  $statement = $db->prepare($sql);
+  //3. read the results
+  $success = $statement->execute(
+    [$siteId]
+  );
+  //4. handle the results
+  $arr = [];
+  while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    $theTurbine = new turbineDeployed($row);
+    array_push($arr, $theTurbine);
   }
+  return $arr;
+}
 }

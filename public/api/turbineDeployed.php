@@ -2,10 +2,15 @@
 <?php
 require '../../app/common.php';
 
-//FETCH ALL
-$turbinesDep = TurbDeployed::fetchAll();
+$siteId = intval($_GET['siteId'] ?? 0);
 
-$json = json_encode($turbinesDep, JSON_PRETTY_PRINT);
+if ($siteId < 1) {
+  throw new Exception('Invalid site ID in URL');
+}
+
+$turbine = TurbineDeployed::fetchByTurbineId($siteId);
+
+$json = json_encode($turbine, JSON_PRETTY_PRINT);
 
 header('Content-Type: application/json');
 echo $json;
