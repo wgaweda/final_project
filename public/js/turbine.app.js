@@ -23,7 +23,8 @@ methods: {
     .catch( err => {
       console.log('TEAM LIST ERROR:');
       console.log(err);
-  },
+  })
+},
 
 gotoTurbine (sid) {
 window.location = 'turbine.html?siteId=' + sid;
