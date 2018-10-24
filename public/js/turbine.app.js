@@ -5,8 +5,8 @@ var turbineApp = new Vue({
 },
 
 methods: {
-  fetchTurbine(tid) {
-    fetch('api/turbine.php?turbineId='+tid)
+  fetchTurbineDeployed(sid) {
+    fetch('api/turbineDeployed.php?siteId='+tid)
     .then( response => response.json() )
     .then( json => {this.turbines = json; console.log(this.turbines)} )
     .catch( err => {
@@ -15,24 +15,23 @@ methods: {
       })
     },
 
-
-gotoTurbine (tid) {
-window.location = 'turbine.html?turbineId=' + tid;
+gotoTurbine (sid) {
+window.location = 'turbine.html?siteId=' + sid;
 }
 },
 
 created() {
   const url = new URL(window.location.href);
-  const turbineId = url.searchParams.get('turbineId') || 0;
-  console.log('Turbine: '+ turbineId);
-  this.turbines.turbineId = turbineId;
+  const siteId = url.searchParams.get('siteId') || 0;
+  console.log('Turbine: '+ siteId);
+  this.turbines.siteId = siteId;
 
-  if (!turbineId) {
+  if (!siteId) {
     console.error('Client Id not defined in URL parameters.')
   }
 
 
-  this.fetchTurbine(turbineId);
+  this.fetchTurbine(siteId);
 }
 
 })
