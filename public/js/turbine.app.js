@@ -20,7 +20,7 @@ window.location = 'turbine.html?siteId=' + sid;
 },
 
 gotoSensor (senid) {
-window.location = 'sensor.html?sensorDeployedId=' + senid;
+window.location = 'sensor.html?sensorId=' + senid;
 }
 },
 
