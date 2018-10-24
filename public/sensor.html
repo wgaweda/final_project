@@ -26,8 +26,10 @@
 
   <body>
 
-    <main v-for="s in sensors">
+    <main id="sensorsMain">
+      <div v-for="s in sensors">
       <h3>{{ s.sensorName }}</h3>
+    </div>
     </main>
 
 
