@@ -30,7 +30,7 @@ public static function fetchBySensorId(int $sensorDeployedId) {
   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
   //2. run a query
-  $sql = 'SELECT * FROM sensor, sensorDeployed
+  $sql = 'SELECT * FROM sensor, sensorDeployed, turbineDeployed
   WHERE turbineDeployed.turbineDeployedId = sensorDeployed.turbineDeployedId
   AND sensor.sensorId = sensorDeployed.sensorId
   AND sensorDeployed.sensorDeployedId = ?';
