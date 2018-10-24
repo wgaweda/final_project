@@ -59,9 +59,8 @@
   </div>
 
   <div v-for="s in sensors">
-    {{ s.sensorName }}
+    <h2 align="center">Sensors used in this Turbine</h2>
     <div class="row">
-      <h2>Sensor</h2>
       <div class="col">
         <h3>{{ s.sensorName }}</h3>
         {{ s.sensorDescription }}
@@ -69,6 +68,10 @@
       <div class="col">
         Manufacturer: {{ s.manufacturer }}
         Life Expectancy Hours: {{ s.totalLifeExpentancyHours }}
+      <div v-for="d in sensorsDeployed">
+        Serial Number: {{ d.serialNumber }}
+        Deployed Date: {{ d.deployedDate }}
+      </div>
 
       </div>
     </div>
