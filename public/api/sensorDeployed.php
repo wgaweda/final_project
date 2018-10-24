@@ -2,10 +2,10 @@
 <?php
 require '../../app/common.php';
 
-$sensorDeployedId = intval($_GET['sensorDeployedId'] ?? 0);
+$sensorDeployedId = intval($_GET['sensorId'] ?? 0);
 
 if ($sensorDeployedId < 1) {
-  throw new Exception('Invalid site ID in URL');
+  throw new Exception('Invalid Sensor ID in URL');
 }
 
 //FETCH ALL
