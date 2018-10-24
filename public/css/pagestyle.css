@@ -9,7 +9,8 @@
 background-color: #5DD873;
 padding: 20px;
 color: darkslategrey;
-font-size: 56px;
+font-size: 60px;
+font-family: impact;
 }
 
 #logo {
@@ -25,10 +26,17 @@ font-size: 56px;
 }
 
 .subheaderClass {
-background-color: darkslategrey;
-padding-bottom: 10px;
+background-color: white;
 padding-top: 10px;
-color: white;
+color: darkslategrey;
+border: 5px solid;
+font-size: 45px;
+}
+
+.subtext {
+color: darkslategrey;
+padding-top: 5px;
+font-size: 15px;
 }
 
 .bodyClass {
