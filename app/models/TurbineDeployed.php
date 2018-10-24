@@ -26,7 +26,7 @@ class TurbDeployed
   $this->lastUnplannedOutageDate = $data['lastUnplannedOutageDate'];
 }
 
-public static function fetchByTurbineId(int $siteId) {
+public static function fetchByTurbId(int $siteId) {
 //trying this j
   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
