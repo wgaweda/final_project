@@ -31,7 +31,7 @@ created() {
   }
 
 
-  this.fetchTurbine(siteId);
+  this.fetchTurbineDeployed(siteId);
 }
 
 })
