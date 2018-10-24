@@ -80,8 +80,34 @@
       </div>
     </div>
   </div>
-  <div>
-    
+  <div v-for="t in series">
+    <table>
+      <thead>
+        <th>sensorDeployedId</th>
+        <th>dataCollectedDate</th>
+        <th>output</th>
+        <th>heatRate</th>
+        <th>compressorEfficiency</th>
+        <th>availability</th>
+        <th>reliability</th>
+        <th>firedHours</th>
+        <th>trips</th>
+        <th>starts</th>
+      </thead>
+      <tr>
+        <td>{{ t.sensorDeployedId }}</td>
+        <td>{{ t.dataCollectedDate }}</td>
+        <td>{{ t.output }}</td>
+        <td>{{ t.heatRate }}</td>
+        <td>{{ t.compressorEfficiency }}</td>
+        <td>{{ t.availability }}</td>
+        <td>{{ t.reliability }}</td>
+        <td>{{ t.firedHours }}</td>
+        <td>{{ t.trips }}</td>
+        <td>{{ t.starts }}</td>
+      </tr>
+    </table>
+
   </div>
 
 </main>

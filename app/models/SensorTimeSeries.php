@@ -39,8 +39,7 @@ class Series
     $sql = 'SELECT * from sensorTimeSeries, sensorDeployed, turbineDeployed
     WHERE sensorTimeSeries.sensorDeployedId = sensorDeployed.sensorDeployedId
     AND sensorDeployed.turbineDeployedId = turbineDeployed.turbineDeployedId
-    AND turbineDeployed.siteId = ?
-    GROUP BY sensorTimeSeries.sensorDeployedId';
+    AND turbineDeployed.siteId = ?';
 
     $statement = $db->prepare($sql);
     //3. read the results

@@ -3,7 +3,8 @@ var turbineApp = new Vue({
   data:{
     turbines:[],
     sensors: [],
-    sensorsDeployed: []
+    sensorsDeployed: [],
+    series: []
 },
 
 methods: {
@@ -37,6 +38,16 @@ methods: {
   })
 },
 
+fetchSensorTimeSeries (sid) {
+  fetch('api/sensorTimeSeries.php?siteId='+sid)
+  .then( response => response.json() )
+  .then( json => {this.series = json; console.log(this.series)} )
+  .catch( err => {
+    console.log('SENSOR TIME SERIES ERROR:');
+    console.log(err);
+})
+},
+
 gotoTurbine (sid) {
 window.location = 'turbine.html?siteId=' + sid;
 }
@@ -57,6 +68,7 @@ created() {
   this.fetchTurbineDeployed(siteId);
   this.fetchSensor(siteId);
   this.fetchSensorDeployed(siteId);
+  this.fetchSensorTimeSeries(siteId);
 
 }
 
