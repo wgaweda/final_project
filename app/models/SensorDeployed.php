@@ -33,7 +33,7 @@ public static function fetchBySensorId(int $sensorDeployedId) {
   $sql = 'SELECT * FROM sensor, sensorDeployed, turbineDeployed
   WHERE turbineDeployed.turbineDeployedId = sensorDeployed.turbineDeployedId
   AND sensor.sensorId = sensorDeployed.sensorId
-  AND sensorDeployed.sensorDeployedId = ?';
+  AND sensor.sensorId = ?';
 
   $statement = $db->prepare($sql);
   //3. read the results
