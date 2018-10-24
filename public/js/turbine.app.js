@@ -16,15 +16,15 @@ methods: {
       })
     },
 
-  fetchSensors() {
-    fetch('api/sensor.php')
-    .then( response => response.json() )
-    .then( json => {turbinesMain.sensors = json} )
-    .catch( err => {
-      console.log('TEAM LIST ERROR:');
-      console.log(err);
-  })
-},
+//   fetchSensors() {
+//     fetch('api/sensor.php')
+//     .then( response => response.json() )
+//     .then( json => {turbinesMain.sensors = json} )
+//     .catch( err => {
+//       console.log('TEAM LIST ERROR:');
+//       console.log(err);
+//   })
+// },
 
 gotoTurbine (sid) {
 window.location = 'turbine.html?siteId=' + sid;
@@ -44,7 +44,6 @@ created() {
 
 
   this.fetchTurbineDeployed(siteId);
-  this.fetchSensors();
 }
 
 })
