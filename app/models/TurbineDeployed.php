@@ -5,6 +5,11 @@ class TurbDeployed
 {
   public $turbineDeployedId;
   public $turbineId;
+  public $turbineName;
+  public $turbineDescription;
+  public $capacity;
+  public $rampUpTime;
+  public $maintenanceInterval;
   public $siteId;
   public $serialNumber;
   public $deployedDate;
@@ -17,6 +22,11 @@ class TurbDeployed
   public function __construct($data) {
   $this->turbineDeployedId = isset($data['turbineDeployedId']) ? intval($data['turbineDeployedId']) : null;
   $this->turbineId = isset($data['turbineId']) ? intval($data['turbineId']) : null;
+  $this->turbineName = $data['turbineName'];
+  $this->turbineDescription = $data['turbineDescription'];
+  $this->capacity = $data['capacity'];
+  $this->rampUpTime = $data['rampUpTime'];
+  $this->maintenanceInterval = $data['maintenanceInterval'];
   $this->siteId = $data['siteId'];
   $this->serialNumber = $data['serialNumber'];
   $this->deployedDate = $data['deployedDate'];
@@ -44,7 +54,7 @@ public static function fetchByTurbId(int $siteId) {
   $arr = [];
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
     $theTurbine = new TurbDeployed($row);
-    
+
     array_push($arr, $theTurbine);
   }
   return $arr;
