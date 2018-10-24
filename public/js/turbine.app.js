@@ -2,7 +2,8 @@ var turbineApp = new Vue({
   el: '#turbinesMain',
   data:{
     turbines:[],
-    sensors: []
+    sensors: [],
+    sensorsDeployed: []
 },
 
 methods: {
@@ -11,20 +12,30 @@ methods: {
     .then( response => response.json() )
     .then( json => {this.turbines = json; console.log(this.turbines)} )
     .catch( err => {
-        console.log('CLIENT FETCH ERROR:');
+        console.log('TURBINE FETCH ERROR:');
         console.log(err);
       })
     },
 
-//   fetchSensors() {
-//     fetch('api/sensor.php')
-//     .then( response => response.json() )
-//     .then( json => {turbinesMain.sensors = json} )
-//     .catch( err => {
-//       console.log('TEAM LIST ERROR:');
-//       console.log(err);
-//   })
-// },
+  fetchSensor(sid) {
+    fetch('api/sensor.php?siteId='+sid)
+    .then( response => response.json() )
+    .then( json => {turbinesMain.sensors = json} )
+    .catch( err => {
+      console.log('SENSOR ERROR:');
+      console.log(err);
+  })
+},
+
+  fetchSensorDeployed (sid) {
+    fetch('api/sensorDeployed.php?siteId='+sid)
+    .then( response => response.json() )
+    .then( json => {turbinesMain.sensors = json} )
+    .catch( err => {
+      console.log('SENSOR DEPLOYED ERROR:');
+      console.log(err);
+  })
+},
 
 gotoTurbine (sid) {
 window.location = 'turbine.html?siteId=' + sid;
@@ -44,6 +55,9 @@ created() {
 
 
   this.fetchTurbineDeployed(siteId);
+  this.fetchSensor(siteId);
+  this.fetchSensorDeployed(siteId);
+
 }
 
 })
