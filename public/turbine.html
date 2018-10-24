@@ -69,7 +69,7 @@
         Manufacturer: {{ s.manufacturer }}
         Life Expectancy Hours: {{ s.totalLifeExpentancyHours }}
       <div v-for="d in sensorsDeployed"
-      :key="sensorId">
+      :key="d.sensorId">
         Serial Number: {{ d.serialNumber }}
         Deployed Date: {{ d.deployedDate }}
       </div>
