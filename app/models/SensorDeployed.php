@@ -20,10 +20,12 @@ class Deployed
     $sql = 'SELECT * from sensorDeployed, turbineDeployed
     WHERE sensorDeployed.turbineDeployedId = turbineDeployed.turbineDeployedId
     AND turbineDeployed.turbineDeployedId = ?';
-    
+
     $statement = $db->prepare($sql);
     //3. read the results
-    $success = $statement->execute();
+    $success = $statement->execute(
+      [$sensorDeployedId]
+    );
     //4. handle the results
     $arr = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
