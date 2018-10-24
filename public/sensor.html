@@ -27,51 +27,6 @@
   <body>
 <main id="turbinesMain" class="container-fluid">
 
-<div v-for="t in turbines">
-
-  <h2 align="center">{{ t.turbineName }}</h2>
-
-  <div class="row">
-    <div class="col">
-      {{ t.turbineDescription }}
-    </div>
-    <div class="col">
-      Capacity: {{ t.capacity }}
-      <br />
-      Ramp Up Time: {{ t.rampUpTime }}
-      <br  />
-      Maintenance Interval: {{ t.maintenanceInterval }}
-    </div>
-  </div>
-  <h3>Turbine Information</h3>
-  <div class="row">
-    <div class="col">
-      Serial Number: {{ t.serialNumber }}
-      Deployement Date: {{ t.deployedDate }}
-    </div>
-    <div class="col">
-      Total Fired Hours: {{ t.totalFiredHours }}
-      Total Starts: {{ t.totalStarts }}
-      Last Planned Outage Date: {{ t.lastPlannedOutageDate }}
-      Last Unplanned Outage Date: {{ t.lastUnplannedOutageDate }}
-    </div>
-</div>
-</div>
-
-<div v-for="s in sensors">
-  <div class="row">
-    <h2>Sensor</h2>
-    <div class="col">
-      <h3>{{ s.sensorNames }}</h3>
-      {{ s.sensorDescription }}
-    </div>
-    <div class="col">
-      Manufacturer: {{ s.manufacturer }}
-      Life Expectancy Hours: {{ s.totalLifeExpentancyHours }}
-
-    </div>
-  </div>
-</div>
 
 </main>
        <!-- development version, includes helpful console warnings -->
