@@ -3,6 +3,10 @@ class Deployed
 {
   public $sensorDeployedId;
   public $sensorId;
+  public $sensorName;
+  public $sensorDescription;
+  public $manufacturer;
+  public $totalLifeExpentancyHours;
   public $turbineDeployedId;
   public $serialNumber;
   public $deployedDate;
@@ -10,6 +14,10 @@ class Deployed
   public function __construct($data) {
   $this->sensorDeployedId = isset($data['sensorDeployedId']) ? intval($data['sensorDeployedId']) : null;
   $this->sensorId = $data['sensorId'];
+  $this->sensorName = $data['sensorName'];
+  $this->sensorDescription = $data['sensorDescription'];
+  $this->manufacturer = $data['manufacturer'];
+  $this->totalLifeExpentancyHours = $data['totalLifeExpentancyHours'];
   $this->turbineDeployedId = $data['turbineDeployedId'];
   $this->serialNumber = $data['serialNumber'];
   $this->deployedDate = $data['deployedDate'];
@@ -17,8 +25,9 @@ class Deployed
   public static function fetchSensorDepById(int $sensorDeployedId) {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     //2. run a query
-    $sql = 'SELECT * from sensorDeployed, turbineDeployed
-    WHERE sensorDeployed.turbineDeployedId = turbineDeployed.turbineDeployedId
+    $sql = 'SELECT * from sensor, sensorDeployed, turbineDeployed
+    WHERE sensor.sensorId = sensorDeployed.sensorDeployedId
+    AND sensorDeployed.turbineDeployedId = turbineDeployed.turbineDeployedId
     AND turbineDeployed.turbineDeployedId = ?';
 
     $statement = $db->prepare($sql);
