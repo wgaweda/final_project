@@ -75,6 +75,10 @@ methods: {
     }
   },
 
+  gotoSite (sid) {
+  window.location = 'turbine.html?siteId=' + sid;
+  }
+
   },
 
 

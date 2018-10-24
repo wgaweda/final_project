@@ -29,7 +29,7 @@
     <div v-for="c in clients"
     :key="c.clientId">
 
-    <h2 align="center">{{ c.clientName }}</h2>
+    <h2 align="center" @onclick="gotoSite(turbineDeployed.siteId)">{{ c.clientName }}</h2>
 
     <div class="container-fluid">
       <div class="row">
