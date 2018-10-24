@@ -75,7 +75,7 @@ methods: {
     }
   },
 
-  gotoSite (sid) {
+  gotoTurbine (sid) {
   window.location = 'turbine.html?siteId=' + sid;
   }
 

@@ -6,7 +6,7 @@ var sensorApp = new Vue({
 
 methods: {
   fetchsensorDeployed(sDid) {
-    fetch('api/sensorDeployed.php?sensorDeployedId='+sid)
+    fetch('api/sensorDeployed.php?sensorDeployedId='+sDid)
     .then( response => response.json() )
     .then( json => {this.sensors = json; console.log(this.sensors)} )
     .catch( err => {
@@ -15,7 +15,7 @@ methods: {
       })
     },
 
-gotosensor (sDid) {
+gotoSensor (sDid) {
 window.location = 'sensor.html?sensorDeployedId=' + sDid;
 },
 
@@ -28,7 +28,7 @@ created() {
   this.sensors.sensorDeployedId = sensorDeployedId;
 
   if (!sensorDeployedId) {
-    console.error('Client Id not defined in URL parameters.')
+    console.error('Sensor Deployed Id not defined in URL parameters.')
   }
 
 

@@ -18,6 +18,7 @@ methods: {
 gotoTurbine (sid) {
 window.location = 'turbine.html?siteId=' + sid;
 },
+
 gotoSensor (senid) {
 window.location = 'sensor.html?sensorDeployedId=' + senid;
 }
@@ -30,7 +31,7 @@ created() {
   this.turbines.siteId = siteId;
 
   if (!siteId) {
-    console.error('Client Id not defined in URL parameters.')
+    console.error('Site Id not defined in URL parameters.')
   }
 
 
