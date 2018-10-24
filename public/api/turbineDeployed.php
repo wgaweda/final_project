@@ -8,7 +8,7 @@ if ($siteId < 1) {
   throw new Exception('Invalid site ID in URL');
 }
 
-$turbine = turbineDeployed::fetchByTurbId($siteId);
+$turbine = TurbDeployed::fetchByTurbId($siteId);
 
 $json = json_encode($turbine, JSON_PRETTY_PRINT);
 

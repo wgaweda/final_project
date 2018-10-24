@@ -43,7 +43,8 @@ public static function fetchByTurbId(int $siteId) {
   //4. handle the results
   $arr = [];
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-    $theTurbine = new turbineDeployed($row);
+    $theTurbine = new TurbDeployed($row);
+    
     array_push($arr, $theTurbine);
   }
   return $arr;
