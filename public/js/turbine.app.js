@@ -6,7 +6,7 @@ var turbineApp = new Vue({
 
 methods: {
   fetchTurbineDeployed(sid) {
-    fetch('api/turbineDeployed.php?siteId='+tid)
+    fetch('api/turbineDeployed.php?siteId='+sid)
     .then( response => response.json() )
     .then( json => {this.turbines = json; console.log(this.turbines)} )
     .catch( err => {
