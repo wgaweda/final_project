@@ -1,7 +1,8 @@
 var turbineApp = new Vue({
   el: '#turbinesMain',
   data:{
-    turbines:[]
+    turbines:[],
+    sensors: []
 },
 
 methods: {
@@ -15,13 +16,19 @@ methods: {
       })
     },
 
+  fetchSensors() {
+    fetch('api/sensor.php')
+    .then( response => response.json() )
+    .then( json => {turbinesMain.sensors = json} )
+    .catch( err => {
+      console.log('TEAM LIST ERROR:');
+      console.log(err);
+  },
+
 gotoTurbine (sid) {
 window.location = 'turbine.html?siteId=' + sid;
-},
-
-gotoSensor (senid) {
-window.location = 'sensor.html?sensorId=' + senid;
 }
+
 },
 
 created() {
@@ -36,6 +43,7 @@ created() {
 
 
   this.fetchTurbineDeployed(siteId);
+  this.fetchSensors();
 }
 
 })

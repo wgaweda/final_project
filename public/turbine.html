@@ -56,9 +56,15 @@
       Last Unplanned Outage Date: {{ t.lastUnplannedOutageDate }}
     </div>
 </div>
-<div class="row">
-  <h2 @click="gotoSensor">Sensor</h2>
 </div>
+
+<div v-for="s in sensors">
+  <div class="row">
+    <h2>Sensor</h2>
+    <div class="col">
+      {{ s.sensorsNames }}
+    </div>
+  </div>
 </div>
 
 
