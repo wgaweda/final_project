@@ -62,7 +62,13 @@
   <div class="row">
     <h2>Sensor</h2>
     <div class="col">
-      {{ s.sensorsNames }}
+      <h3>{{ s.sensorNames }}</h3>
+      {{ s.sensorDescription }}
+    </div>
+    <div class="col">
+      Manufacturer: {{ s.manufacturer }}
+      Life Expectancy Hours: {{ s.totalLifeExpentancyHours }}
+    
     </div>
   </div>
 </div>
