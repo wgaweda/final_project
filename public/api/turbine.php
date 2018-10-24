@@ -10,13 +10,13 @@ require '../../app/common.php';
 // header('Content-Type: application/json');
 // echo $json;
 
-$turbineId = intval($_GET['turbineId'] ?? 0);
+$siteId = intval($_GET['siteId'] ?? 0);
 
-if ($turbineId < 1) {
+if ($siteId < 1) {
   throw new Exception('Invalid turbine ID in URL');
 }
 
-$turbine = Turbine::fetchByTurbineId($turbineId);
+$turbine = Turbine::fetchByTurbineId($siteId);
 
 $json = json_encode($turbine, JSON_PRETTY_PRINT);
 

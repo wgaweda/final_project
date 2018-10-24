@@ -38,16 +38,16 @@ class Turbine
   //   return $arr;
   // }
 
-  public static function fetchByTurbineId(int $turbineId) {
+  public static function fetchByTurbineId(int $siteId) {
 //trying this j
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     //2. run a query
-    $sql = 'SELECT * FROM turbine WHERE turbineId = ?';
+    $sql = 'SELECT * FROM turbine WHERE siteId = ?';
     $statement = $db->prepare($sql);
     //3. read the results
     $success = $statement->execute(
-      [$turbineId]
+      [$siteId]
     );
     //4. handle the results
     $arr = [];
