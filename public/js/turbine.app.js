@@ -20,7 +20,7 @@ methods: {
   fetchSensor(sid) {
     fetch('api/sensor.php?siteId='+sid)
     .then( response => response.json() )
-    .then( json => {turbinesMain.sensors = json} )
+    .then( json => {turbinesMain.sensors = json; console.log(this.sensors)} )
     .catch( err => {
       console.log('SENSOR ERROR:');
       console.log(err);
@@ -30,7 +30,7 @@ methods: {
   fetchSensorDeployed (sid) {
     fetch('api/sensorDeployed.php?siteId='+sid)
     .then( response => response.json() )
-    .then( json => {turbinesMain.sensorsDeployed = json} )
+    .then( json => {turbinesMain.sensorsDeployed = json; console.log(this.sensorsDeployed)} )
     .catch( err => {
       console.log('SENSOR DEPLOYED ERROR:');
       console.log(err);
