@@ -2,7 +2,7 @@
 <?php
 require '../../app/common.php';
 
-$turbineDeployedId = intval($_GET['turbineDeployedId'] ?? 0);
+$turbineDeployedId = intval($_GET['siteId'] ?? 0);
 
 if ($turbineDeployedId < 1) {
   throw new Exception('Invalid turbineDeployedId ID in URL');
