@@ -17,6 +17,9 @@ methods: {
 
 gotoTurbine (sid) {
 window.location = 'turbine.html?siteId=' + sid;
+},
+gotoSensor (senid) {
+window.location = 'sensor.html?siteId=' + senid;
 }
 },
 

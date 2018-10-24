@@ -25,44 +25,15 @@
     </nav>
 
   <body>
-<main id="turbinesMain" class="container-fluid">
 
-<div v-for="t in turbines">
-
-  <h2 align="center">{{ t.turbineName }}</h2>
-
-  <div class="row">
-    <div class="col">
-      {{ t.turbineDescription }}
-    </div>
-    <div class="col">
-      Capacity: {{ t.capacity }}
-      <br />
-      Ramp Up Time: {{ t.rampUpTime }}
-      <br  />
-      Maintenance Interval: {{ t.maintenanceInterval }}
-    </div>
-  </div>
-  <h3>Turbine Information</h3>
-  <div class="row">
-    <div class="col">
-      Serial Number: {{ t.serialNumber }}
-      Deployement Date: {{ t.deployedDate }}
-    </div>
-    <div class="col">
-      Total Fired Hours: {{ t.totalFiredHours }}
-      Total Starts: {{ t.totalStarts }}
-      Last Planned Outage Date: {{ t.lastPlannedOutageDate }}
-      Last Unplanned Outage Date: {{ t.lastUnplannedOutageDate }}
-    </div>
-    <h2 @click="gotoSensor">Sensor</h2>
-</div>
-</div>
+    <main v-for="s in sensors">
+      <h3>{{ s.sensorName }}</h3>
+    </main>
 
 
        <!-- development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="js/turbine.app.js"></script>
+<script src="js/sensor.app.js"></script>
 
 
   </body>
