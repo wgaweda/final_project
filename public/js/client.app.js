@@ -95,7 +95,7 @@ created() {
 
   fetch('api/client.php')
   .then( response => response.json() )
-  .then( json => {this.clientList = json; console.log(this.clientList)} )
+  .then( json => {clientApp.clientList = json } )
   .catch( err => {
       console.log('CLIENT FETCH ERROR:');
       console.log(err);
@@ -105,7 +105,6 @@ created() {
   this.fetchClient(clientId);
   this.fetchNotes(clientId);
   this.fetchSite(clientId);
-  this.fetchClientList();
 }
 
 })
