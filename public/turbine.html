@@ -68,12 +68,11 @@
         Manufacturer: {{ s.manufacturer }}
         <br />
         Life Expectancy Hours: {{ s.totalLifeExpentancyHours }}
-      <div
-        :key="sensorsDeployed.sensorId"
-        :id="'sensors-' + sensors.id + '-sensorsDeployed-' + sensorsDeployed.sensorId">
+        <br />
         Serial Number: {{ sensorsDeployed.serialNumber }}
+        <br />
         Deployed Date: {{ sensorsDeployed.deployedDate }}
-      </div>
+        <br />
 
       </div>
     </div>
