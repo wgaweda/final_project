@@ -4,6 +4,7 @@ var clientApp = new Vue({
   clients: [],
   clientNotes: [],
   sites: [],
+  clientList: [],
   noteForm: {}
 
 },
@@ -43,7 +44,7 @@ methods: {
   fetchClientList () {
     fetch('api/client.php')
     .then( response => response.json() )
-    .then( json => {this.noteForm = json; console.log(this.noteForm)} )
+    .then( json => {this.clientList = json; console.log(this.clientList)} )
     .catch( err => {
         console.log('CLIENT FETCH ERROR:');
         console.log(err);

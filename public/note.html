@@ -29,12 +29,12 @@
                 <form id="newNoteForm" @submit.prevent="handleNoteForm">
 
                   <div class="form-group row">
-                    <label for="team" class="col-sm-1 col-form-label">Client: </label>
+                    <label for="client" class="col-sm-1 col-form-label">Client: </label>
                     <div class="col-sm-6">
                       <select id="client" v-model="noteForm.clientId" class="form-control" required>
-                        <option v-for="n in noteForm"
-                        :key="n.clientId"
-                        :value="n.clientId">{{ n.clientName }}</option>
+                        <option v-for="c in clientList"
+                        :key="c.clientId"
+                        :value="c.clientId">{{ c.clientName }}</option>
                       </select>
                     </div>
 
