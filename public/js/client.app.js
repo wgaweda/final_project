@@ -9,6 +9,16 @@ var clientApp = new Vue({
 
 },
 methods: {
+  
+  fetchClientList () {
+    fetch('api/client.php')
+    .then( response => response.json() )
+    .then( json => {this.clientList = json; console.log(this.clientList)} )
+    .catch( err => {
+        console.log('CLIENT FETCH ERROR:');
+        console.log(err);
+      })
+  },
 
   fetchClient(cid) {
     fetch('api/client.php?clientId='+cid)
@@ -37,16 +47,6 @@ methods: {
     .then( json => {this.sites = json; console.log(this.sites)} )
     .catch( err => {
         console.log('SITE FETCH ERROR:');
-        console.log(err);
-      })
-  },
-
-  fetchClientList () {
-    fetch('api/client.php')
-    .then( response => response.json() )
-    .then( json => {this.clientList = json; console.log(this.clientList)} )
-    .catch( err => {
-        console.log('CLIENT FETCH ERROR:');
         console.log(err);
       })
   },
