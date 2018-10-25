@@ -93,13 +93,13 @@ created() {
     console.error('Client Id not defined in URL parameters.')
   }
 
-  fetch('api/client.php')
-  .then( response => response.json() )
-  .then( json => {this.clientList = json } )
-  .catch( err => {
-      console.log('CLIENT FETCH ERROR:');
-      console.log(err);
-    })
+  // fetch('api/client.php')
+  // .then( response => response.json() )
+  // .then( json => {this.clientList = json } )
+  // .catch( err => {
+  //     console.log('CLIENT FETCH ERROR:');
+  //     console.log(err);
+  //   })
 
 
   this.fetchClient(clientId);
