@@ -9,16 +9,6 @@ var clientApp = new Vue({
 
 },
 methods: {
-  
-  fetchClientList () {
-    fetch('api/client.php')
-    .then( response => response.json() )
-    .then( json => {this.clientList = json; console.log(this.clientList)} )
-    .catch( err => {
-        console.log('CLIENT FETCH ERROR:');
-        console.log(err);
-      })
-  },
 
   fetchClient(cid) {
     fetch('api/client.php?clientId='+cid)
@@ -102,6 +92,14 @@ created() {
   if (!clientId) {
     console.error('Client Id not defined in URL parameters.')
   }
+
+  fetch('api/client.php')
+  .then( response => response.json() )
+  .then( json => {this.clientList = json; console.log(this.clientList)} )
+  .catch( err => {
+      console.log('CLIENT FETCH ERROR:');
+      console.log(err);
+    })
 
 
   this.fetchClient(clientId);
