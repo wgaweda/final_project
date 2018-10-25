@@ -19,6 +19,21 @@ class Client
   $this->headquarters = $data['headquarters'];
 
 }
+  public static function fetchAll() {
+    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+    //2. run a query
+    $sql = 'SELECT * FROM client';
+    $statement = $db->prepare($sql);
+    //3. read the results
+    $success = $statement->execute();
+    //4. handle the results
+    $arr = [];
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      $theClientList = new Client($row);
+      array_push($arr, $theClientList);
+    }
+    return $arr;
+  }
 
   public static function fetchByClientId(int $clientId) {
 //trying this j

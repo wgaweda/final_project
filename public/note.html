@@ -13,14 +13,13 @@
 </head>
 <nav>
 
-<div class="topnav">
-  <a href="home.html">Home</a>
-  <a href="http://ec2-34-216-141-243.us-west-2.compute.amazonaws.com/client.html?clientId=1">Hoosier Energy</a>
-  <a href="http://ec2-34-216-141-243.us-west-2.compute.amazonaws.com/client.html?clientId=2">Pacific Tidal Energy</a>
-  <a href="http://ec2-34-216-141-243.us-west-2.compute.amazonaws.com/note.html">Client Notes</a>
+  <div class="topnav">
+    <a href="home.html">Home</a>
+    <a href="http://ec2-34-216-141-243.us-west-2.compute.amazonaws.com/note.html">Client Notes</a>
 
-</div>
-</nav>
+  </div>
+  </nav>
+
   <body>
 
 
@@ -30,16 +29,14 @@
                 <form id="newNoteForm" @submit.prevent="handleNoteForm">
 
                   <div class="form-group row">
-                    <label for="clientId" class="col-sm-1 col-form-label">Client: </label>
+                    <label for="team" class="col-sm-1 col-form-label">Client: </label>
                     <div class="col-sm-6">
-                       <input type="number" id="clientId" v-model="noteForm.clientId" class="form-control" placeholder="Enter a clientId" required>
-                      <!-- <select id="turbine" v-model="clients.clientId" class="form-control" required>
-                        <option v-for="cl in clientList"
-                        :key="cl.clientId"
-                        :value="cl.clientId">{{ cl.clientName }}</option>
-                      </select> -->
+                      <select id="client" v-model="noteForm.clientId" class="form-control" required>
+                        <option v-for="n in noteForm"
+                        :key="n.clientId"
+                        :value="n.clientId">{{ n.clientName }}</option>
+                      </select>
                     </div>
-                  </div>
 
                   <div class="form-group row">
                     <label for="notes" class="col-sm-2 col-form-label">Client Notes: </label>

@@ -14,3 +14,12 @@ $json = json_encode($client, JSON_PRETTY_PRINT);
 
 header('Content-Type: application/json');
 echo $json;
+
+//FETCH ALL
+$comments = Client::fetchAll();
+
+$json = json_encode($comments, JSON_PRETTY_PRINT);
+
+header('Content-Type: application/json');
+
+echo $json;

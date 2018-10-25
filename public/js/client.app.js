@@ -40,6 +40,16 @@ methods: {
       })
   },
 
+  fetchClientList () {
+    fetch('api/client.php')
+    .then( response => response.json() )
+    .then( json => {this.noteForm = json; console.log(this.noteForm)} )
+    .catch( err => {
+        console.log('CLIENT FETCH ERROR:');
+        console.log(err);
+      })
+  },
+
     gotoClient (cid) {
     window.location = 'client.html?clientId=' + cid;
   },
@@ -96,6 +106,7 @@ created() {
   this.fetchClient(clientId);
   this.fetchNotes(clientId);
   this.fetchSite(clientId);
+  this.fetchClientList();
 }
 
 })
