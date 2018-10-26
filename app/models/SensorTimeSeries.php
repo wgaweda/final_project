@@ -20,14 +20,14 @@ class Series
   $this->Id = isset($data['Id']) ? intval($data['Id']) : null;
   $this->sensorDeployedId = isset($data['sensorDeployedId']) ? intval($data['sensorDeployedId']) : null;
   $this->dataCollectedDate = $data['dataCollectedDate'];
-  $this->output = $data['output'];
-  $this->heatRate = $data['heatRate'];
-  $this->compressorEfficiency = $data['compressorEfficiency'];
-  $this->availability = $data['availability'];
-  $this->reliability = $data['reliability'];
-  $this->firedHours = $data['firedHours'];
-  $this->trips = $data['trips'];
-  $this->starts = $data['starts'];
+  $this->output = intval($data['output']);
+  $this->heatRate = intval($data['heatRate']);
+  $this->compressorEfficiency = intval($data['compressorEfficiency']);
+  $this->availability = intval($data['availability']);
+  $this->reliability = intval($data['reliability']);
+  $this->firedHours = intval($data['firedHours']);
+  $this->trips = intval($data['trips']);
+  $this->starts = intval($data['starts']);
 
 }
 
