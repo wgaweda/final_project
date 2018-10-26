@@ -48,6 +48,71 @@ fetchSensorTimeSeries (sid) {
 })
 },
 
+formatHours() {
+      this.series.forEach(
+        (entry, index, arr) => {
+          entry.dataCollectedDate = Date.parse(entry.dataCollectedDate); // Convert to ms since Jan 1, 1970 UTC
+          entry.output = Number(entry.output);
+          entry.runningTotalHours = entry.hours +
+            (index == 0 ? 0 : arr[index-1].runningTotalHours)
+      });
+
+      // DEBUG: Make sure the data is how we want it:
+      console.log(this.series);
+},
+
+buildOutputChart() {
+     Highcharts.chart('outputChart', {
+           title: {
+               text: 'Output Chart'
+           },
+           xAxis: {
+               type: 'datetime'
+           },
+           yAxis: {
+               title: {
+                   text: 'output'
+               }
+           },
+           legend: {
+               enabled: false
+           },
+           plotOptions: {
+               area: {
+                   fillColor: {
+                       linearGradient: {
+                           x1: 0,
+                           y1: 0,
+                           x2: 0,
+                           y2: 1
+                       },
+                       stops: [
+                           [0, Highcharts.getOptions().colors[0]],
+                           [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                       ]
+                   },
+                   marker: {
+                       radius: 2
+                   },
+                   lineWidth: 1,
+                   states: {
+                       hover: {
+                           lineWidth: 1
+                       }
+                   },
+                   threshold: null
+               }
+           },
+
+           series: [{
+               type: 'area',
+               name: 'Output',
+
+               data: this.series.map( item => [item.dataCollectedDate, item.output] )
+           }]
+       });
+   },
+
 gotoTurbine (sid) {
 window.location = 'turbine.html?siteId=' + sid;
 }
