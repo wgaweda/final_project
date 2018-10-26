@@ -33,6 +33,11 @@ border: 5px solid;
 font-size: 45px;
 }
 
+table {
+background-color: white;
+font-size: 16px;
+}
+
 .subtext {
 color: darkslategrey;
 padding-top: 5px;
