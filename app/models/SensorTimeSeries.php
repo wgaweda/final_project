@@ -19,7 +19,7 @@ class Series
   public function __construct($data) {
   $this->Id = isset($data['Id']) ? intval($data['Id']) : null;
   $this->sensorDeployedId = isset($data['sensorDeployedId']) ? intval($data['sensorDeployedId']) : null;
-  $this->dataCollectedDate = $data['dataCollectedDate'];
+  $this->dataCollectedDate = DateTime($data['dataCollectedDate']);
   $this->output = intval($data['output']);
   $this->heatRate = intval($data['heatRate']);
   $this->compressorEfficiency = intval($data['compressorEfficiency']);

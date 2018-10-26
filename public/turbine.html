@@ -106,7 +106,7 @@
       <tbody v-for="t in timeSeries">
       <tr>
         <td>{{ t.sensorDeployedId }}</td>
-        <td>{{ t.dataCollectedDate }}</td>
+        <td>{{ pretty_date(t.dataCollectedDate) }}</td>
         <td>{{ t.output }}</td>
         <td>{{ t.heatRate }}</td>
         <td>{{ t.compressorEfficiency }}</td>

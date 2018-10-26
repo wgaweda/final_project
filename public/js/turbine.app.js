@@ -8,6 +8,11 @@ var turbineApp = new Vue({
 },
 
 methods: {
+
+  pretty_date: function (d) {
+      return moment(d).format('l')
+    },
+
   fetchTurbineDeployed(sid) {
     fetch('api/turbineDeployed.php?siteId='+sid)
     .then( response => response.json() )
