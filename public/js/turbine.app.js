@@ -48,7 +48,7 @@ fetchSensorTimeSeries (sid) {
   .then( response => response.json() )
   .then( json => {this.timeSeries = json;
     console.log(this.timeSeries);
-    this.formatOutput();
+    // this.formatOutput();
     this.buildOutputChart();
   } )
   .catch( err => {
