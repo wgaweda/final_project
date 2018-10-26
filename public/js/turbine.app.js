@@ -48,6 +48,7 @@ fetchSensorTimeSeries (sid) {
   .then( response => response.json() )
   .then( json => {this.timeSeries = json;
     console.log(this.timeSeries);
+    this.formatOutput();
     this.buildOutputChart();
   } )
   .catch( err => {
@@ -56,7 +57,7 @@ fetchSensorTimeSeries (sid) {
 })
 },
 
-formatHours() {
+formatOutput() {
       this.timeSeries.forEach(
         (entry, index, arr) => {
           entry.dataCollectedDate = Date.parse(entry.dataCollectedDate); // Convert to ms since Jan 1, 1970 UTC
@@ -75,7 +76,7 @@ buildOutputChart() {
                text: 'Output Chart'
            },
            xAxis: {
-               type: 'date'
+               type: 'datetime'
            },
            yAxis: {
                title: {
