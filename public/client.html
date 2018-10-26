@@ -27,7 +27,7 @@
     <div v-for="c in clients"
     :key="c.clientId">
 
-    <h2 align="center" class="headerClass">{{ c.clientName }}</h2>
+    <h2 align="center">{{ c.clientName }}</h2>
 
     <div class="container-fluid">
       <div class="row">
@@ -46,8 +46,10 @@
     </div>
   </div>
 
-  <div v-for="s in sites" class="headerClass">
+  <div v-for="s in sites">
 
+  <div class="container">
+  <div class="box">
     <h2 @click="gotoTurbine(s.siteId)"> {{ s.siteName }}  </h2>
     <br />
     <p>
@@ -62,6 +64,8 @@
   </p>
 
   </div>
+  </div>
+</div>
 
   <div>
     <table class="table table-striped table-sm">
