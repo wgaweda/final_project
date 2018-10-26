@@ -9,7 +9,7 @@
 background-color: #5DD873;
 padding: 20px;
 color: darkslategrey;
-font-size: 60px;
+font-size: 66px;
 font-family: impact;
 }
 
@@ -75,5 +75,40 @@ color: white;
 font-size: 16px;
 background-color: darkslategrey;
 padding-top: 10px;
+}
 
+/*Style the DIV*/
+.container .box{
+  float: left;
+  width: 98%;
+  margin: 2px;
+  padding: 5px;
+  border: 3px solid #ccc;
+  text-align: center;
+}
+
+/*Fade all the DIV when user hovers on any div*/
+.container:hover .box{
+  zoom: 1;
+  filter: alpha(opacity=45);
+  opacity: 0.45;
+  -webkit-transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -ms-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
+}
+
+/*Fade out the particular DIV when user hover on that DIV*/
+.container .box:hover{
+  box-shadow: 3px 3px 15px #666;
+  border-color:#0fa811;
+  background: #0fa811;
+  color: #fff;
+  cursor: pointer;
+
+  /*Opacity*/
+  zoom: 1;
+  filter: alpha(opacity=100);
+  opacity: 1;
 }
