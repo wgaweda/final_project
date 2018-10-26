@@ -101,8 +101,8 @@ padding-top: 10px;
 /*Fade out the particular DIV when user hover on that DIV*/
 .container .box:hover{
   box-shadow: 3px 3px 15px #666;
-  border-color:#C76C0C;
-  background: #C76C0C;
+  border-color:#0fa811;
+  background: #0fa811;
   color: #fff;
   cursor: pointer;
 
