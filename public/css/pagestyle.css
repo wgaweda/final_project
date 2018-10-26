@@ -80,10 +80,10 @@ padding-top: 10px;
 /*Style the DIV*/
 .container .box{
   float: left;
-  width: 98%;
+  width: 125%;
   margin: 2px;
   padding: 5px;
-  border: 3px solid #ccc;
+  border: 6px solid #ccc;
   text-align: center;
 }
 
@@ -101,7 +101,7 @@ padding-top: 10px;
 
 /*Fade out the particular DIV when user hover on that DIV*/
 .container .box:hover{
-  box-shadow: 3px 3px 15px #666;
+  box-shadow: 5px 5px 15px #666;
   border-color:#0fa811;
   background: #0fa811;
   color: #fff;
