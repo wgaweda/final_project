@@ -41,7 +41,10 @@ methods: {
 fetchSensorTimeSeries (sid) {
   fetch('api/sensorTimeSeries.php?siteId='+sid)
   .then( response => response.json() )
-  .then( json => {this.timeSeries = json; console.log(this.timeSeries)} )
+  .then( json => {this.timeSeries = json;
+    console.log(this.timeSeries);
+    this.buildOutputChart();
+  } )
   .catch( err => {
     console.log('SENSOR TIME SERIES ERROR:');
     console.log(err);
@@ -71,7 +74,7 @@ buildOutputChart() {
            },
            yAxis: {
                title: {
-                   text: 'output'
+                   text: 'Output'
                }
            },
            legend: {
