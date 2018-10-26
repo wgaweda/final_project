@@ -21,15 +21,15 @@
   </div>
   </nav>
 
-  <body>
+  <body class="bodyClass">
   <main id="clientsMain">
+
+  <center>
 
     <div v-for="c in clients"
     :key="c.clientId">
 
-    <center>
-    <h2>{{ c.clientName }}</h2>
-    </center>
+    <h2 class="headerClass">{{ c.clientName }}</h2>
 
     <div class="container-fluid">
       <div class="row">
@@ -48,13 +48,18 @@
     </div>
   </div>
 
+  </center>
+
     <br />
     <br />
 
   <center>
-  <h2> Site Listings</h2>
-  <p>Please click a site nam below for turbine KPI information.</p>
+    <h2 align="center" class="subheaderClass">Site Listings <br /> <p class="subtext">
+    Please click a site name below for turbine KPI information.
+    </p></h2>
   </center>
+
+
   <br />
 
   <div v-for="s in sites">
