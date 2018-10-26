@@ -48,7 +48,7 @@ fetchSensorTimeSeries (sid) {
   .then( response => response.json() )
   .then( json => {this.timeSeries = json;
     console.log(this.timeSeries);
-    // this.formatOutput();
+    this.formatOutput();
     this.buildOutputChart();
   } )
   .catch( err => {
@@ -60,8 +60,7 @@ fetchSensorTimeSeries (sid) {
 formatOutput() {
       this.timeSeries.forEach(
         (entry) => {
-          entry.dataCollectedDate = Date.parse(entry.dataCollectedDate); // Convert to ms since Jan 1, 1970 UTC
-          entry.output = Number(entry.output);
+          entry.dataCollectedDate = Date(entry.dataCollectedDate); // Convert to ms since Jan 1, 1970 UTC
       });
 
       // DEBUG: Make sure the data is how we want it:
