@@ -59,9 +59,9 @@ fetchSensorTimeSeries (sid) {
 
 formatOutput() {
       this.timeSeries.forEach(
-        (entry, index, arr) => {
+        (entry, arr) => {
           entry.dataCollectedDate = Date.parse(entry.dataCollectedDate); // Convert to ms since Jan 1, 1970 UTC
-          // entry.output = Number(entry.output);
+          entry.output = Number(entry.output);
       });
 
       // DEBUG: Make sure the data is how we want it:
