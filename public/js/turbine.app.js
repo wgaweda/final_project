@@ -62,8 +62,8 @@ formatOutput() {
         (entry, index, arr) => {
           entry.dataCollectedDate = Date.parse(entry.dataCollectedDate); // Convert to ms since Jan 1, 1970 UTC
           entry.output = Number(entry.output);
-          // entry.runningTotalHours = entry.hours +
-          //   (index == 0 ? 0 : arr[index-1].runningTotalHours)
+          entry.runningTotalHours = entry.output +
+            (index == 0 ? 0 : arr[index-1].runningTotalHours)
       });
 
       // DEBUG: Make sure the data is how we want it:
