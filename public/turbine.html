@@ -80,8 +80,10 @@
 
   <h2 align="center">Charts</h2>
 
-  <div>
-    <div id="outputChart"></div>
+  <div class="row">
+    <div class="col">
+      <div id="outputChart" style="width:100%; height:400px;"></div>
+    </div>
   </div>
 
   <h2 align="center">Key Performance Indicators</h2>
@@ -101,7 +103,7 @@
         <th>Starts</th>
       </tr>
       </thead>
-      <tbody v-for="t in series">
+      <tbody v-for="t in timeSeries">
       <tr>
         <td>{{ t.sensorDeployedId }}</td>
         <td>{{ t.dataCollectedDate }}</td>

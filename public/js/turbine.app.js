@@ -4,7 +4,7 @@ var turbineApp = new Vue({
     turbines:[],
     sensors: [],
     sensorsDeployed: [],
-    series: []
+    timeSeries: []
 },
 
 methods: {
@@ -41,7 +41,7 @@ methods: {
 fetchSensorTimeSeries (sid) {
   fetch('api/sensorTimeSeries.php?siteId='+sid)
   .then( response => response.json() )
-  .then( json => {this.series = json; console.log(this.series)} )
+  .then( json => {this.timeSeries = json; console.log(this.timeSeries)} )
   .catch( err => {
     console.log('SENSOR TIME SERIES ERROR:');
     console.log(err);
@@ -49,7 +49,7 @@ fetchSensorTimeSeries (sid) {
 },
 
 formatHours() {
-      this.series.forEach(
+      this.timeSeries.forEach(
         (entry, index, arr) => {
           entry.dataCollectedDate = Date.parse(entry.dataCollectedDate); // Convert to ms since Jan 1, 1970 UTC
           entry.output = Number(entry.output);
@@ -58,7 +58,7 @@ formatHours() {
       });
 
       // DEBUG: Make sure the data is how we want it:
-      console.log(this.series);
+      console.log(this.timeSeries);
 },
 
 buildOutputChart() {
@@ -108,7 +108,7 @@ buildOutputChart() {
                type: 'area',
                name: 'Output',
 
-               data: this.series.map( item => [item.dataCollectedDate, item.output] )
+               data: this.timeSeries.map( item => [item.dataCollectedDate, item.output] )
            }]
        });
    },
@@ -134,6 +134,8 @@ created() {
   this.fetchSensor(siteId);
   this.fetchSensorDeployed(siteId);
   this.fetchSensorTimeSeries(siteId);
+
+  this.buildOutputChart();
 
 }
 
