@@ -58,7 +58,7 @@ fetchSensorTimeSeries (sid) {
 },
 
 formatOutput() {
-      this.timeSeries.forEach(
+      this.timeSeries.forEach (
         (entry) => {
           entry.dataCollectedDate = Date.parse(entry.dataCollectedDate); // Convert to ms since Jan 1, 1970 UTC
       });
