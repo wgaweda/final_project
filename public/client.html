@@ -27,7 +27,7 @@
     <div v-for="c in clients"
     :key="c.clientId">
 
-    <h2 align="center">{{ c.clientName }}</h2>
+    <h2 align="center" class="headerClass">{{ c.clientName }}</h2>
 
     <div class="container-fluid">
       <div class="row">
@@ -46,12 +46,11 @@
     </div>
   </div>
 
-  <div v-for="s in sites">
+  <div v-for="s in sites" class="headerClass">
 
-    <h2 @click="gotoTurbine(s.siteId)"> {{ s.siteName }} </h2>
+    <h2 @click="gotoTurbine(s.siteId)"> {{ s.siteName }}  </h2>
     <br />
     <p>
-
     {{ s.siteDescription }}
     <br />
     Primary Contact: {{ s.primaryContact }}
@@ -61,7 +60,6 @@
     Address: {{ s.addrLine1 }}, {{ s.addrCity }}, {{ s.addrState }}, {{ s.addrZip }}, {{ s.addrCountry }}
 
   </p>
-
 
   </div>
 
