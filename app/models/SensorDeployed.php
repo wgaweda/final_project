@@ -1,7 +1,21 @@
 <?php
 class Deployed
 {
+  public $sensorName;
+  public $sensorDescription;
+  public $manufacturer;
+  public $totalLifeExpentancyHours;
+  public $serialNumber;
+  public $deployedDate;
 
+  public function __construct($data) {
+  $this->sensorName = $data['sensorName'];
+  $this->sensorDescription = $data['sensorDescription'];
+  $this->manufacturer = $data['manufacturer'];
+  $this->totalLifeExpentancyHours = $data['totalLifeExpentancyHours'];
+  $this->serialNumber = $data['serialNumber'];
+  $this->deployedDate = $data['deployedDate'];
+}
   public static function fetchSensorDepById(int $sensorDeployedId) {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     //2. run a query
