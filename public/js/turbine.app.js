@@ -73,7 +73,7 @@ buildOutputChart() {
                text: 'Output Chart'
            },
            xAxis: {
-               categories: 'date'
+               text: 'datetime'
            },
            yAxis: {
                title: {
@@ -111,7 +111,7 @@ buildOutputChart() {
            },
 
            series: [{
-             
+
                step: 'right',
                name: 'Right',
 
