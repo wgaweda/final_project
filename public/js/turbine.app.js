@@ -111,9 +111,7 @@ buildOutputChart() {
            },
 
            series: [{
-               type: 'area',
-               // name: 'Output',
-
+             
                step: 'right',
                name: 'Right',
 
