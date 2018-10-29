@@ -38,7 +38,8 @@ class Series
     //2. run a query
     $sql = 'SELECT s.sensorDeployedId, s.dataCollectedDate, s.output, s.heatRate, s.compressorEfficiency, s.availability, s.reliability, s.firedHours, s.trips, s.starts
     From sensor, turbineDeployed, sensorTimeSeries as s, sensorDeployed, site
-    WHERE s.sensorDeployedId = sensorDeployed.sensorDeployedId
+    Where sensor.sensorId = sensorDeployed.sensorId
+    AND sensorDeployed.sensorDeployedId = s.sensorDeployedId
     AND sensorDeployed.turbineDeployedId = turbineDeployed.turbineDeployedId
     AND turbineDeployed.siteId = site.siteId
     AND site.siteId = ?';
