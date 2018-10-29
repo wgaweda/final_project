@@ -36,10 +36,11 @@ class Series
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     //2. run a query
-    $sql = 'SELECT * from sensorTimeSeries, sensorDeployed, turbineDeployed
+    $sql = 'SELECT * from sensorTimeSeries, sensorDeployed, turbineDeployed, site
     WHERE sensorTimeSeries.sensorDeployedId = sensorDeployed.sensorDeployedId
     AND sensorDeployed.turbineDeployedId = turbineDeployed.turbineDeployedId
-    AND turbineDeployed.siteId = ?';
+    AND turbineDeployed.siteId = site.siteId
+    AND site.siteId = ?';
 
     $statement = $db->prepare($sql);
     //3. read the results
