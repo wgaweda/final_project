@@ -26,7 +26,7 @@ class Deployed
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     //2. run a query
     $sql = 'SELECT * from sensor, sensorDeployed, turbineDeployed, site
-    WHERE sensor.sensorId = sensorDeployed.sensorDeployedId
+    WHERE sensorDeployed.sensorDeployedId = turbineDeployed.sensorDeployedId
     AND turbineDeployed.siteId = site.siteId
     AND site.siteId = ?';
 
