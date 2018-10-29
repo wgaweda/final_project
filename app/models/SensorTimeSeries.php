@@ -36,8 +36,9 @@ class Series
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     //2. run a query
-    $sql = 'SELECT * from sensorTimeSeries, sensorDeployed
-    WHERE sensorTimeSeries.sensorDeployedId = sensorDeployed.sensorDeployedId
+    $sql = 'SELECT * from sensor, turbineDeployed, sensorTimeSeries, sensorDeployed
+    WHERE sensorTimeSeries.sensorId = sensor.sensorId 
+    AND sensor.sensorId = sensorDeployed.sensorId
     AND sensorDeployed.turbineDeployedId = turbineDeployed.turbineDeployedId
     AND turbineDeployed.siteId = site.siteId
     AND site.siteId = ?';
