@@ -73,7 +73,7 @@ buildOutputChart() {
                text: 'Output Chart'
            },
            xAxis: {
-               categories: 'datetime'
+               categories: timeSeries.dataCollectedDate
            },
            yAxis: {
                title: {
