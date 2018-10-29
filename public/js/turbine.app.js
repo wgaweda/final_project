@@ -71,12 +71,16 @@ buildOutputChart() {
 
     var data = {}
     this.timeSeries.forEach(i => {
-      if (undefined === data[i.sensorDeployedId]) {data[i.sensorsDeployedId] = []}
+      if (!(i.sensorDeployedId in data)) {
+        data[i.sensorsDeployedId] = []
+      }
       data[i.sensorDeployedId].push([i.dataCollectedDate, i.output]);
     });
+    console.log('Restructured data');
     console.log(data);
 
     var mySeries = data.keys.map(function (s) { return {name: 'Sensor ' + s, data: data[s]} } );
+    console.log('Restructured data as series');
     console.log(mySeries);
 
 
@@ -126,7 +130,7 @@ buildOutputChart() {
 
            // [{
            //
-           
+
            //     step: 'right',
            //     name: 'Output',
            //
@@ -158,7 +162,7 @@ created() {
   this.fetchSensorDeployed(siteId);
   this.fetchSensorTimeSeries(siteId);
 
-  this.buildOutputChart();
+//  this.buildOutputChart();
 
 }
 
