@@ -72,7 +72,10 @@ buildOutputChart() {
     var data = {}
     this.timeSeries.forEach(i => {
       if (!(i.sensorDeployedId in data)) {
-        data[i.sensorsDeployedId] = []
+        data[i.sensorsDeployedId] = [];
+        console.log(data[i.sensorsDeployedId]);
+      } else {
+        console.log('array is already defined');
       }
       data[i.sensorDeployedId].push([i.dataCollectedDate, i.output]);
     });
@@ -128,15 +131,15 @@ buildOutputChart() {
 
            series: mySeries
 
-           [{
-
-
-               step: 'right',
-               name: 'Output',
-
-               data: this.timeSeries.map(item => [item.dataCollectedDate, item.output])
-
-           }]
+           // [{
+           //
+           //
+           //     step: 'right',
+           //     name: 'Output',
+           //
+           //     data: this.timeSeries.map(item => [item.dataCollectedDate, item.output])
+           //
+           // }]
        });
    },
 
