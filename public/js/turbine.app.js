@@ -83,8 +83,8 @@ buildOutputChart() {
     console.log('Restructured data');
     console.log(data);
 
-    var mySeries = data.keys();
-    console.log(data.keys());
+    var mySeries = Object.keys(data);
+    console.log(Object.keys(data));
     mySeries = mySeries.map(function (s) { return {name: 'Sensor ' + s, data: data[s]} } );
     console.log('Restructured data as series');
     console.log(mySeries);
