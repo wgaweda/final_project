@@ -3,9 +3,6 @@ class Deployed
 {
   public $sensorDeployedId;
   public $sensorId;
-  public $sensorName;
-  public $sensorDescription;
-  public $manufacturer;
   public $totalLifeExpentancyHours;
   public $turbineDeployedId;
   public $serialNumber;
@@ -14,9 +11,6 @@ class Deployed
   public function __construct($data) {
   $this->sensorDeployedId = isset($data['sensorDeployedId']) ? intval($data['sensorDeployedId']) : null;
   $this->sensorId = $data['sensorId'];
-  $this->sensorName = $data['sensorName'];
-  $this->sensorDescription = $data['sensorDescription'];
-  $this->manufacturer = $data['manufacturer'];
   $this->totalLifeExpentancyHours = $data['totalLifeExpentancyHours'];
   $this->turbineDeployedId = $data['turbineDeployedId'];
   $this->serialNumber = $data['serialNumber'];
