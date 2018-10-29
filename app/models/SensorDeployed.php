@@ -25,10 +25,10 @@ class Deployed
   public static function fetchSensorDepById(int $sensorDeployedId) {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
     //2. run a query
-    $sql = 'SELECT s.sensorName, s.sensorDescription, s.manufacturer, s.totalLifeExpentancyHours, sd.serialNumber, sd.deployedDate 
+    $sql = 'SELECT s.sensorName, s.sensorDescription, s.manufacturer, s.totalLifeExpentancyHours, sd.serialNumber, sd.deployedDate
     FROM sensor as s, sensorDeployed as sd, turbineDeployed, site
-    WHERE sensor.sensorId = sensorDeployed.sensorId
-    AND sensorDeployed.turbineDeployedId = turbineDeployed.turbineDeployedId
+    WHERE s.sensorId = sd.sensorId
+    AND sd.turbineDeployedId = turbineDeployed.turbineDeployedId
     AND turbineDeployed.siteId = site.siteId
     AND site.siteId = ?';
 
