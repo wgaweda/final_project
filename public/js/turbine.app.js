@@ -111,8 +111,8 @@ buildOutputChart() {
            // },
 
            series: [{
-               type: 'area',
-               name: 'Output',
+               // type: 'area',
+               // name: 'Output',
 
                data: this.timeSeries.map( item => [item.dataCollectedDate, item.output] )
            }]
