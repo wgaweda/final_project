@@ -73,8 +73,8 @@ buildOutputChart() {
     console.log('start data is', data);
     this.timeSeries.forEach(i => {
       if (!(i.sensorDeployedId in data)) {
-        data[i.sensorsDeployedId] = [];
-        console.log(data[i.sensorsDeployedId]);
+        data[i.sensorDeployedId] = [];
+        console.log('created', data[i.sensorDeployedId]);
       } else {
         console.log('array is already defined');
       }
