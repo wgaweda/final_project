@@ -73,7 +73,7 @@ buildOutputChart() {
                text: 'Output Chart'
            },
            xAxis: {
-               categories: timeSeries.dataCollectedDate
+               categories: 'date'
            },
            yAxis: {
                title: {
@@ -111,7 +111,7 @@ buildOutputChart() {
            },
 
            series: [{
-               // type: 'area',
+               type: 'area',
                // name: 'Output',
 
                step: 'right',
