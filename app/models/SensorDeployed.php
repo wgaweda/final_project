@@ -27,6 +27,7 @@ class Deployed
     //2. run a query
     $sql = 'SELECT * from sensor, sensorDeployed, turbineDeployed, site
     WHERE sensor.sensorId = sensorDeployed.sensorId
+    AND sensorDeployedId.sensorDeployedId = turbineDeployedId.sensorDeployedId
     AND turbineDeployed.siteId = site.siteId
     AND site.siteId = ?';
 
