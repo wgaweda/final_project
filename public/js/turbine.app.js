@@ -113,7 +113,7 @@ buildOutputChart() {
            series: [{
 
                step: 'right',
-               name: 'Right',
+               name: 'Output',
 
                data: this.timeSeries.map( item => [item.dataCollectedDate, item.output] )
 
