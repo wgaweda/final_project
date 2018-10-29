@@ -128,15 +128,15 @@ buildOutputChart() {
 
            series: mySeries
 
-           // [{
-           //
+           [{
 
-           //     step: 'right',
-           //     name: 'Output',
-           //
-           //     data: this.timeSeries.map(item => [item.dataCollectedDate, item.output])
-           //
-           // }]
+
+               step: 'right',
+               name: 'Output',
+
+               data: this.timeSeries.map(item => [item.dataCollectedDate, item.output])
+
+           }]
        });
    },
 
