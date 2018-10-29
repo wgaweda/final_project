@@ -68,6 +68,18 @@ formatOutput() {
 },
 
 buildOutputChart() {
+
+    var data = {}
+    this.timeSeries.forEach(i => {
+      if (undefined === data[i.sensorDeployedId]) {data[i.sensorsDeployedId] = []}
+      data[i.sensorDeployedId].push([i.dataCollectedDate, i.output]);
+    });
+    console.log(data);
+
+    var mySeries = data.keys.map(function (s) { return {name: 'Sensor ' + s, data: data[s]} } );
+    console.log(mySeries);
+
+
      Highcharts.chart('outputChart', {
            title: {
                text: 'Output Chart'
@@ -110,14 +122,16 @@ buildOutputChart() {
                }
            },
 
-           series: [{
+           series: mySeries
 
-               step: 'right',
-               name: 'Output',
-
-               data: this.timeSeries.map( item => [item.dataCollectedDate, item.output] )
-
-           }]
+           // [{
+           //
+           //     step: 'right',
+           //     name: 'Output',
+           //
+           //     data: this.timeSeries.map(item => [item.dataCollectedDate, item.output])
+           //
+           // }]
        });
    },
 
