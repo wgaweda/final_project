@@ -126,6 +126,7 @@ buildOutputChart() {
 
            // [{
            //
+           
            //     step: 'right',
            //     name: 'Output',
            //
