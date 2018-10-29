@@ -75,11 +75,11 @@ buildOutputChart() {
            xAxis: {
                categories: 'datetime'
            },
-           yAxis: {
-               title: {
-                   text: 'Output'
-               }
-           },
+           // yAxis: {
+           //     title: {
+           //         text: 'Output'
+           //     }
+           // },
            legend: {
                enabled: false
            },
@@ -111,8 +111,8 @@ buildOutputChart() {
            // },
 
            series: [{
-               // type: 'area',
-               // name: 'Output',
+               type: 'area',
+               name: 'Output',
 
                data: this.timeSeries.map( item => [item.dataCollectedDate, item.output] )
            }]
