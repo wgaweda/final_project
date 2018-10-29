@@ -69,7 +69,7 @@ formatOutput() {
 
 buildOutputChart() {
 
-    var data = {}
+    var data = {};
     this.timeSeries.forEach(i => {
       if (!(i.sensorDeployedId in data)) {
         data[i.sensorsDeployedId] = [];
