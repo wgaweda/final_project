@@ -11,20 +11,20 @@
 
   <title>Client 1</title>
 </head>
-<nav>
-
-  <div class="topnav">
-    <a href="index.html">Home</a>
+<div class="header">
+  <a href="#default" class="logo">Add Notes</a>
+  <div class="header-right">
+    <a class="active" href="index.html">Home</a>
     <a href="http://ec2-34-216-141-243.us-west-2.compute.amazonaws.com/note.html">Client Notes</a>
 
   </div>
-  </nav>
+</div>
 
   <body>
 
 
     <div id="clientsMain" class="container-fluid">
-                <h3>Add Notes</h3>
+
 
                 <form id="newNoteForm" @submit.prevent="handleNoteForm">
 
