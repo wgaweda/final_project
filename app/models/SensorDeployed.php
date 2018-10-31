@@ -1,6 +1,7 @@
 <?php
 class Deployed
 {
+  public $sensorDeployedId
   public $sensorName;
   public $sensorDescription;
   public $manufacturer;
@@ -9,6 +10,7 @@ class Deployed
   public $deployedDate;
 
   public function __construct($data) {
+  $this->sensorDeployedId = isset($data['sensorDeployedId']) ? intval($data['sensorDeployedId']) : null;
   $this->sensorName = $data['sensorName'];
   $this->sensorDescription = $data['sensorDescription'];
   $this->manufacturer = $data['manufacturer'];
