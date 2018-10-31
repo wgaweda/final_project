@@ -133,18 +133,9 @@ buildOutputChart() {
            },
 
            series: mySeries
-
-           // [{
-           //
-           //
-           //     step: 'right',
-           //     name: 'Output',
-           //
-           //     data: this.timeSeries.map(item => [item.dataCollectedDate, item.output])
-           //
-           // }]
        });
    },
+
 
 gotoTurbine (sid) {
 window.location = 'turbine.html?siteId=' + sid;
