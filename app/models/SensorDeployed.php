@@ -23,8 +23,7 @@ class Deployed
     //2. run a query
     $sql = 'SELECT sd.sensorDeployedId, s.sensorName, s.sensorDescription, s.manufacturer, s.totalLifeExpentancyHours, sd.serialNumber, sd.deployedDate
     FROM sensor as s, sensorDeployed as sd, turbineDeployed, site
-    WHERE s.sensorId = sd.sensorId
-    AND sd.turbineDeployedId = turbineDeployed.turbineDeployedId
+    WHERE sd.turbineDeployedId = turbineDeployed.turbineDeployedId
     AND turbineDeployed.siteId = site.siteId
     AND site.siteId = ?';
 
