@@ -1,7 +1,7 @@
 <?php
 class Deployed
 {
-  public $sensorDeployedId
+  public $sensorDeployedId;
   public $sensorName;
   public $sensorDescription;
   public $manufacturer;
