@@ -5,7 +5,7 @@ class Notes
 {
   public $Id;
   public $clientId;
-  public $clientName
+  public $clientName;
   public $notes;
 
 

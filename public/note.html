@@ -32,7 +32,7 @@
                     <label for="client" class="col-sm-1 col-form-label">Client: </label>
                     <div class="col-sm-6">
                       <select id="client" v-model="noteForm.clientName" class="form-control" required>
-                        <option v-for="c in clientList"
+                        <option v-for="c in clients"
                         :key="c.clientId"
                         :value="c.clientId">{{ c.clientName }}</option>
                       </select>
