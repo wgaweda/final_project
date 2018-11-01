@@ -83,7 +83,7 @@ buildOutputChart() {
       } else {
         console.log('array is already defined');
       }
-      data[i.sensorDeployedId].push([Date(i.dataCollectedDate), i.output]);
+      data[i.sensorDeployedId].push([i.dataCollectedDate, i.output]);
     });
     console.log('Restructured data');
     console.log(data);
