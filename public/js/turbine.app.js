@@ -206,6 +206,7 @@ buildOutputChart() {
           });
       },
 
+<<<<<<< HEAD
     buildCompChart() {
 
         var data = {};
@@ -416,6 +417,9 @@ buildOutputChart() {
 
 
       buildFiredHoursChart() {
+=======
+      buildCompChart() {
+>>>>>>> a59b8b39fb5b667bd926490b9784acc9c14cfa93
 
           var data = {};
           console.log('start data is', data);
@@ -426,7 +430,11 @@ buildOutputChart() {
             } else {
               console.log('array is already defined');
             }
+<<<<<<< HEAD
             data[i.sensorDeployedId].push([i.dataCollectedDate, i.firedHours]);
+=======
+            data[i.sensorDeployedId].push([i.dataCollectedDate, i.compressorEfficiency]);
+>>>>>>> a59b8b39fb5b667bd926490b9784acc9c14cfa93
           });
           console.log('Restructured data');
           console.log(data);
@@ -438,16 +446,26 @@ buildOutputChart() {
           console.log(mySeries);
 
 
+<<<<<<< HEAD
            Highcharts.chart('firedChart', {
                  title: {
                      text: 'Fired Hours Chart'
+=======
+           Highcharts.chart('compChart', {
+                 title: {
+                     text: 'Compressor Efficiency Chart'
+>>>>>>> a59b8b39fb5b667bd926490b9784acc9c14cfa93
                  },
                  xAxis: {
                      text: 'datetime'
                  },
                  yAxis: {
                      title: {
+<<<<<<< HEAD
                          text: 'Fired Hours'
+=======
+                         text: 'Compressor Efficiency'
+>>>>>>> a59b8b39fb5b667bd926490b9784acc9c14cfa93
                      }
                  },
                  legend: {
@@ -484,6 +502,218 @@ buildOutputChart() {
              });
          },
 
+<<<<<<< HEAD
+=======
+
+      buildAvailabilityChart() {
+
+          var data = {};
+          console.log('start data is', data);
+          this.timeSeries.forEach(i => {
+            if (!(i.sensorDeployedId in data)) {
+              data[i.sensorDeployedId] = [];
+              console.log('created', data[i.sensorDeployedId]);
+            } else {
+              console.log('array is already defined');
+            }
+            data[i.sensorDeployedId].push([i.dataCollectedDate, i.availability]);
+          });
+          console.log('Restructured data');
+          console.log(data);
+
+          var mySeries = Object.keys(data);
+          console.log(Object.keys(data));
+          mySeries = mySeries.map(function (s) { return {name: 'Sensor ' + s, data: data[s]} } );
+          console.log('Restructured data as series');
+          console.log(mySeries);
+
+
+           Highcharts.chart('availChart', {
+                 title: {
+                     text: 'Availability Chart'
+                 },
+                 xAxis: {
+                     text: 'datetime'
+                 },
+                 yAxis: {
+                     title: {
+                         text: 'Availability'
+                     }
+                 },
+                 legend: {
+                     enabled: false
+                 },
+                 plotOptions: {
+                     area: {
+                         fillColor: {
+                             linearGradient: {
+                                 x1: 0,
+                                 y1: 0,
+                                 x2: 0,
+                                 y2: 1
+                             },
+                             stops: [
+                                 [0, Highcharts.getOptions().colors[0]],
+                                 [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                             ]
+                         },
+                         marker: {
+                             radius: 2
+                         },
+                         lineWidth: 1,
+                         states: {
+                             hover: {
+                                 lineWidth: 1
+                             }
+                         },
+                         threshold: null
+                     }
+                 },
+
+                 series: mySeries
+             });
+         },
+
+         buildReliabilityChart() {
+
+             var data = {};
+             console.log('start data is', data);
+             this.timeSeries.forEach(i => {
+               if (!(i.sensorDeployedId in data)) {
+                 data[i.sensorDeployedId] = [];
+                 console.log('created', data[i.sensorDeployedId]);
+               } else {
+                 console.log('array is already defined');
+               }
+               data[i.sensorDeployedId].push([i.dataCollectedDate, i.reliability]);
+             });
+             console.log('Restructured data');
+             console.log(data);
+
+             var mySeries = Object.keys(data);
+             console.log(Object.keys(data));
+             mySeries = mySeries.map(function (s) { return {name: 'Sensor ' + s, data: data[s]} } );
+             console.log('Restructured data as series');
+             console.log(mySeries);
+
+
+              Highcharts.chart('reliaChart', {
+                    title: {
+                        text: 'Reliability Chart'
+                    },
+                    xAxis: {
+                        text: 'datetime'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Reliability'
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    plotOptions: {
+                        area: {
+                            fillColor: {
+                                linearGradient: {
+                                    x1: 0,
+                                    y1: 0,
+                                    x2: 0,
+                                    y2: 1
+                                },
+                                stops: [
+                                    [0, Highcharts.getOptions().colors[0]],
+                                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                                ]
+                            },
+                            marker: {
+                                radius: 2
+                            },
+                            lineWidth: 1,
+                            states: {
+                                hover: {
+                                    lineWidth: 1
+                                }
+                            },
+                            threshold: null
+                        }
+                    },
+
+                    series: mySeries
+                });
+            },
+
+
+          buildFiredHoursChart() {
+
+              var data = {};
+              console.log('start data is', data);
+              this.timeSeries.forEach(i => {
+                if (!(i.sensorDeployedId in data)) {
+                  data[i.sensorDeployedId] = [];
+                  console.log('created', data[i.sensorDeployedId]);
+                } else {
+                  console.log('array is already defined');
+                }
+                data[i.sensorDeployedId].push([i.dataCollectedDate, i.firedHours]);
+              });
+              console.log('Restructured data');
+              console.log(data);
+
+              var mySeries = Object.keys(data);
+              console.log(Object.keys(data));
+              mySeries = mySeries.map(function (s) { return {name: 'Sensor ' + s, data: data[s]} } );
+              console.log('Restructured data as series');
+              console.log(mySeries);
+
+
+               Highcharts.chart('firedChart', {
+                     title: {
+                         text: 'Fired Hours Chart'
+                     },
+                     xAxis: {
+                         text: 'datetime'
+                     },
+                     yAxis: {
+                         title: {
+                             text: 'Fired Hours'
+                         }
+                     },
+                     legend: {
+                         enabled: false
+                     },
+                     plotOptions: {
+                         area: {
+                             fillColor: {
+                                 linearGradient: {
+                                     x1: 0,
+                                     y1: 0,
+                                     x2: 0,
+                                     y2: 1
+                                 },
+                                 stops: [
+                                     [0, Highcharts.getOptions().colors[0]],
+                                     [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                                 ]
+                             },
+                             marker: {
+                                 radius: 2
+                             },
+                             lineWidth: 1,
+                             states: {
+                                 hover: {
+                                     lineWidth: 1
+                                 }
+                             },
+                             threshold: null
+                         }
+                     },
+
+                     series: mySeries
+                 });
+             },
+
+>>>>>>> a59b8b39fb5b667bd926490b9784acc9c14cfa93
 gotoTurbine (sid) {
 window.location = 'turbine.html?siteId=' + sid;
 }
