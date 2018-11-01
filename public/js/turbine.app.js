@@ -50,6 +50,11 @@ fetchSensorTimeSeries (sid) {
     console.log(this.timeSeries);
     this.formatOutput();
     this.buildOutputChart();
+    this.buildHeatRateChart();
+    this.buildCompChart();
+    this.buildAvailabilityChart();
+    this.buildReliabilityChart();
+    this.buildFiredHoursChart();
   } )
   .catch( err => {
     console.log('SENSOR TIME SERIES ERROR:');
@@ -506,7 +511,6 @@ created() {
   this.fetchSensorDeployed(siteId);
   this.fetchSensorTimeSeries(siteId);
 
-//  this.buildOutputChart();
 
 }
 
