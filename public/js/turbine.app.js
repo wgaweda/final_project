@@ -48,7 +48,7 @@ fetchSensorTimeSeries (sid) {
   .then( response => response.json() )
   .then( json => {this.timeSeries = json;
     console.log(this.timeSeries);
-    // this.formatOutput();
+    this.formatOutput();
     this.buildOutputChart();
     this.buildHeatRateChart();
     this.buildCompChart();
@@ -62,15 +62,15 @@ fetchSensorTimeSeries (sid) {
 })
 },
 
-// formatOutput() {
-//       this.timeSeries.forEach (
-//         (entry, index, arr) => {
-//           entry.dataCollectedDate = Date.parse(entry.dataCollectedDate); // Convert to ms since Jan 1, 1970 UTC
-//       });
-//
-//       // DEBUG: Make sure the data is how we want it:
-//       console.log(this.timeSeries);
-// },
+formatOutput() {
+      this.timeSeries.forEach (
+        (entry, index, arr) => {
+          entry.dataCollectedDate = Date.parse(entry.dataCollectedDate); // Convert to ms since Jan 1, 1970 UTC
+      });
+
+      // DEBUG: Make sure the data is how we want it:
+      console.log(this.timeSeries);
+},
 
 buildOutputChart() {
 
@@ -83,7 +83,7 @@ buildOutputChart() {
       } else {
         console.log('array is already defined');
       }
-      data[i.sensorDeployedId].push([i.dataCollectedDate, i.output]);
+      data[i.sensorDeployedId].push([Date(i.dataCollectedDate), i.output]);
     });
     console.log('Restructured data');
     console.log(data);
