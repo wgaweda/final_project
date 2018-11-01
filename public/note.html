@@ -31,9 +31,12 @@
                   <div class="form-group row">
                     <label for="client" class="col-sm-1 col-form-label">Client: </label>
                     <div class="col-sm-6">
-                      <input type="text" id="client" v-model="noteForm.clientId" class="form-control" placeholder="Add Client ID" required />
+                      <select id="client" v-model="noteForm.clientName" class="form-control" required>
+                        <option v-for="c in clientList"
+                        :key="c.clientId"
+                        :value="c.clientId">{{ c.clientName }}</option>
+                      </select>
                     </div>
-                  </div>
 
                   <div class="form-group row">
                     <label for="notes" class="col-sm-2 col-form-label">Client Notes: </label>
@@ -53,6 +56,7 @@
         </div> -->
 
     </div>
+  </div>
 
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
