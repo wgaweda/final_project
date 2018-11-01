@@ -5,12 +5,14 @@ class Notes
 {
   public $Id;
   public $clientId;
+  public $clientName
   public $notes;
 
 
   public function __construct($data) {
   $this->Id = isset($data['Id']) ? intval($data['Id']) : null;
   $this->clientId = isset($data['clientId']) ? intval($data['clientId']) : null;
+  $this->clientName = $data['clientName'];
   $this->notes = $data['notes'];
 }
 
@@ -19,7 +21,7 @@ public static function fetchNotesByClientId(int $clientId) {
   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
   //2. run a query
-  $sql = 'SELECT * FROM clientNotes WHERE clientId = ?';
+  $sql = 'SELECT * FROM clientNotes, client WHERE clientId = ?';
   $statement = $db->prepare($sql);
   //3. read the results
   $success = $statement->execute(
