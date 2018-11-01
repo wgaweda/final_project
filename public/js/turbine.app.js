@@ -99,9 +99,6 @@ buildOutputChart() {
            title: {
                text: 'Output Chart'
            },
-           xAxis: {
-               text: 'datetime'
-           },
            yAxis: {
                title: {
                    text: 'Output'
