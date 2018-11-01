@@ -64,7 +64,7 @@ fetchSensorTimeSeries (sid) {
 
 formatOutput() {
       this.timeSeries.forEach (
-        (entry) => {
+        (entry, index, arr) => {
           entry.dataCollectedDate = Date.parse(entry.dataCollectedDate); // Convert to ms since Jan 1, 1970 UTC
       });
 
@@ -98,6 +98,9 @@ buildOutputChart() {
      Highcharts.chart('outputChart', {
            title: {
                text: 'Output Chart'
+           },
+           xAxis: {
+               text: 'datetime'
            },
            yAxis: {
                title: {
