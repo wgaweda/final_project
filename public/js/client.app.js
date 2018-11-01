@@ -4,6 +4,7 @@ var clientApp = new Vue({
   clients: [],
   clientNotes: [],
   sites: [],
+  clientList: [],
   noteForm: {}
 
 },
