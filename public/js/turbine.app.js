@@ -67,10 +67,10 @@ fetchSensorTimeSeries (sid) {
 //         (entry, index, arr) => {
 //           entry.dataCollectedDate = Date.parse(entry.dataCollectedDate); // Convert to ms since Jan 1, 1970 UTC
 //       });
-
-      // DEBUG: Make sure the data is how we want it:
-      console.log(this.timeSeries);
-},
+//
+//       // DEBUG: Make sure the data is how we want it:
+//       console.log(this.timeSeries);
+// },
 
 buildOutputChart() {
 
