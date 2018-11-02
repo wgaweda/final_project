@@ -29,9 +29,9 @@
                 <form id="newNoteForm" @submit.prevent="handleNoteForm">
 
                   <div class="form-group row">
-                    <label for="client" class="col-sm-1 col-form-label">Client: </label>
+                    <label for="client" class="col-sm-1 col-form-label">Client ID: </label>
                     <div class="col-sm-6">
-                        <input type="text" id="client" v-model="noteForm.clientId" class="form-control" placeholder="Add Client Notes" required>
+                        <input type="text" id="client" v-model="noteForm.clientId" class="form-control" placeholder="Enter Client ID" required>
                     </div>
                   </div>
 
@@ -39,7 +39,7 @@
                     <label for="notes" class="col-sm-2 col-form-label">Client Notes: </label>
 
                     <div class="col-sm-6">
-                      <input type="text" id="notes" v-model="noteForm.notes" class="form-control" placeholder="Add Client Notes" required>
+                      <input type="text" id="notes" v-model="noteForm.notes" class="form-control" placeholder="Enter Client Notes" required>
 
                     </div>
                   </div>
