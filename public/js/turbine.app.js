@@ -50,6 +50,11 @@ fetchSensorTimeSeries (sid) {
     console.log(this.timeSeries);
     this.formatOutput();
     this.buildOutputChart();
+    this.buildHeatRateChart();
+    this.buildCompChart();
+    this.buildAvailabilityChart();
+    this.buildReliabilityChart();
+    this.buildFiredHoursChart();
   } )
   .catch( err => {
     console.log('SENSOR TIME SERIES ERROR:');
@@ -59,7 +64,7 @@ fetchSensorTimeSeries (sid) {
 
 formatOutput() {
       this.timeSeries.forEach (
-        (entry) => {
+        (entry, index, arr) => {
           entry.dataCollectedDate = Date.parse(entry.dataCollectedDate); // Convert to ms since Jan 1, 1970 UTC
       });
 
@@ -506,7 +511,6 @@ created() {
   this.fetchSensorDeployed(siteId);
   this.fetchSensorTimeSeries(siteId);
 
-//  this.buildOutputChart();
 
 }
 
