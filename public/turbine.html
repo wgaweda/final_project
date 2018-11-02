@@ -27,10 +27,14 @@
 
   <div v-for="t in turbines">
 
-    <h2 class = "headerClass" align="center">{{ t.turbineName }}</h2>
+    <h2 class = "headerClass" align="center">{{ t.turbineName }} Turbine</h2>
 
     <br />
-    <br />
+
+    <blockquote class="blockquote text-center">
+
+    <h2 style="font-size: 38px; color:darkslategrey;"> <b>Turbine information</b> </h2>
+  </blockquote>
 
     <div class="row">
       <div class="col">
@@ -48,10 +52,6 @@
 
     <br />
 
-    <blockquote class="blockquote text-center">
-
-    <h3 class = "Display 4"> <u>Turbine information</u> </h3>
-  </blockquote>
     <div class="row">
       <div class="col">
         <b> Serial Number: </b> {{ t.serialNumber }} <br />
@@ -67,13 +67,15 @@
   </div>
   <br />
 
-  <h2 class= "subheaderClass" align="center">Sensors used in this Turbine</h2>
-  <div v-for="s in sensorsDeployed" class="outlineClass">
+  <h2 style="font-size: 38px; color:darkslategrey;" align="center"><b>Sensors used in this Turbine</b></h2>
+  <center>
+  <div v-for="s in sensorsDeployed" class="outlineClass" style="max-width: 800px;">
       <div class="col">
         <h3>{{ s.sensorName }}</h3>
         {{ s.sensorDescription }}
       </div>
-      <div class="col">
+      <br />
+      <div class="col" align="left">
         <b> Manufacturer: </b>{{ s.manufacturer }}
         <br />
         <b> Life Expectancy Hours: </b> {{ s.totalLifeExpentancyHours }}
@@ -84,9 +86,14 @@
         <br />
     </div>
   </div>
+  </center>
+
+  <br />
 
 <div class="display-4">
-
+  <center>
+<h4 class="headerClass"> Sensor Data Charting </h4>
+  </center>
 
 </div>
     <div class="row">
@@ -108,7 +115,7 @@
       <div id="firedChart" style="width:100%; height:400px;"></div>
     </div>
 
-  <h2 class= "subheaderClass" align="center">Key Performance Indicators</h2>
+  <h2 class= "headerClass" align="center">Key Performance Indicators</h2>
   <div>
     <table class="table table-striped table-sm">
       <thead>
