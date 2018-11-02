@@ -69,6 +69,7 @@
 
   <h2 class= "subheaderClass" align="center">Sensors used in this Turbine</h2>
   <div v-for="s in sensorsDeployed">
+    <div class="box">
     <div class="row">
       <div class="col">
         <h3>{{ s.sensorName }}</h3>
@@ -84,6 +85,7 @@
         <b> Deployed Date: </b> {{ s.deployedDate }}
         <br />
 
+      </div>
       </div>
     </div>
   </div>
