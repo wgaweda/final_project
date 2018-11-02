@@ -41,7 +41,7 @@
         Maintenance Interval: {{ t.maintenanceInterval }}
       </div>
     </div>
-    <h3>Turbine Information</h3>
+    <h3> Turbine Information</h3>
     <div class="row">
       <div class="col">
         Serial Number: {{ t.serialNumber }}
@@ -57,7 +57,7 @@
   </div>
   <br />
 
-  <h2 align="center">Sensors used in this Turbine</h2>
+  <h2 class= "subheaderClass" align="center">Sensors used in this Turbine</h2>
   <div v-for="s in sensorsDeployed">
     <div class="row">
       <div class="col">
@@ -78,7 +78,7 @@
     </div>
   </div>
 
-  <h2 align="center">Charts</h2>
+  <h2 class= "subheaderClass" align="center">Charts</h2>
 
     <div class="row">
       <div id="outputChart" style="width:100%; height:400px;"></div>
@@ -99,7 +99,7 @@
       <div id="firedChart" style="width:100%; height:400px;"></div>
     </div>
 
-  <h2 align="center">Key Performance Indicators</h2>
+  <h2 class= "subheaderClass" align="center">Key Performance Indicators</h2>
   <div>
     <table class="table table-striped table-sm">
       <thead>
