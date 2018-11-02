@@ -29,6 +29,9 @@
 
     <h2 class = "headerClass" align="center">{{ t.turbineName }}</h2>
 
+    <br />
+    <br />
+
     <div class="row">
       <div class="col">
         {{ t.turbineDescription }}
@@ -41,20 +44,24 @@
         <b> Maintenance Interval: </b> {{ t.maintenanceInterval }}
       </div>
     </div>
+
+    <br />
+    <br />
+
     <blockquote class="blockquote text-center">
 
     <h3 class = "Display 4"> Turbine Information</h3>
   </blockquote>
     <div class="row">
       <div class="col">
-        <b> Serial Number: </b> {{ t.serialNumber }}
+        <b> Serial Number: </b> {{ t.serialNumber }} <br />
         <b> Deployement Date: </b> {{ t.deployedDate }}
       </div>
       <div class="col">
-        <b>Total Fired Hours: </b> {{ t.totalFiredHours }}
-        <b>Total Starts: </b> {{ t.totalStarts }}
-        <b>Last Planned Outage Date: </b> {{ t.lastPlannedOutageDate }}
-        <b>Last Unplanned Outage Date: </b> {{ t.lastUnplannedOutageDate }}
+        <b>Total Fired Hours: </b> {{ t.totalFiredHours }} <br />
+        <b>Total Starts: </b> {{ t.totalStarts }} <br />
+        <b>Last Planned Outage Date: </b> {{ t.lastPlannedOutageDate }} <br />
+        <b>Last Unplanned Outage Date: </b> {{ t.lastUnplannedOutageDate }} <br />
       </div>
   </div>
   </div>
@@ -80,6 +87,9 @@
       </div>
     </div>
   </div>
+
+  <br />
+  <br />
 
   <h2 class= "headerClass" align="center">Charts</h2>
 
