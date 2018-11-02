@@ -68,9 +68,7 @@
   <br />
 
   <h2 class= "subheaderClass" align="center">Sensors used in this Turbine</h2>
-  <div v-for="s in sensorsDeployed">
-    <div class="box">
-    <div class="row">
+  <div v-for="s in sensorsDeployed" class="outlineClass">
       <div class="col">
         <h3>{{ s.sensorName }}</h3>
         {{ s.sensorDescription }}
@@ -84,16 +82,12 @@
         <br />
         <b> Deployed Date: </b> {{ s.deployedDate }}
         <br />
-
-      </div>
-      </div>
     </div>
   </div>
 
 <div class="display-4">
 
 
-  <h2 class= "headerClass" align="center">Charts</h2>
 </div>
     <div class="row">
       <div id="outputChart" style="width:100%; height:400px;"></div>
