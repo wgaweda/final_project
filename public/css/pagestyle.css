@@ -33,6 +33,12 @@ border: 5px solid;
 font-size: 45px;
 }
 
+.outlineClass {
+padding-top: 10px;
+color: darkslategrey;
+border: 5px solid;
+}
+
 #table {
 font-size: 16px;
 }
